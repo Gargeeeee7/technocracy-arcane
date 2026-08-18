@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technocracy | Official Technical Committee of NIT Raipur (Spatial Arcane Maximalism)</title>
+  <meta name="description" content="Official website of Team Technocracy, the technical committee of NIT Raipur. Organizers of Aavartan — Central India's Largest Tech Fest, Vigyaan National Science Exhibition, and year-round Arcane-engineered innovation.">
+  <meta name="keywords" content="Technocracy, NIT Raipur, Aavartan, Vigyaan, Arcane, Hextech, Piltover, Zaun, Spatial UI, Maximalism, Tech Fest, Central India Tech Fest, Technical Committee, Robotics, Hackathons">
+
+  <!-- Google Fonts: Cinzel, Cinzel Decorative, Poppins, Orbitron, Space Grotesk, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;600;700;900&family=JetBrains+Mono:wght@400;600;700&family=Orbitron:wght@600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Modular Arcane Design System -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/intro.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="arcane-theme realm-piltover" id="app-body">
+
+  <!-- Spatial Background Canvas & Floating Energy Orbs -->
+  <canvas id="cyber-canvas"></canvas>
+  <div class="spatial-ambient-orb orb-1"></div>
+  <div class="spatial-ambient-orb orb-2"></div>
+  <div class="spatial-ambient-orb orb-3"></div>
+  <div class="arcane-vignette-overlay"></div>
+  <div class="arcane-film-grain"></div>
+  <div class="cyber-grid-overlay"></div>
+
+  <!-- JINX EASTER EGG GRAFFITI OVERLAY (Triggered via secret or terminal) -->
+  <div id="jinx-graffiti-layer" class="jinx-graffiti-layer hidden">
+    <div class="jinx-scribble text-1">JINX WAS HERE! ⚡</div>
+    <div class="jinx-scribble text-2">BOOM! 💣</div>
+    <div class="jinx-scribble text-3">WHY SO SERIOUS, TOPSIDE? 💥</div>
+    <div class="jinx-monkey-face">🐒💣</div>
+    <button id="jinx-dismiss-btn" class="jinx-dismiss-btn">✕ DISPERSE CHAOS</button>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 1. CINEMATIC SPATIAL HEXTECH INTRO GATEWAY (3D GYRO REACTOR & DUAL REALM) -->
+  <!-- ========================================================================= -->
+  <div id="intro-screen" class="intro-screen">
+    <div class="intro-backdrop"></div>
+    <div class="intro-vignette"></div>
+    <div class="intro-grid-lines"></div>
+
+    <!-- Shockwave Flash Overlay (Triggered on Ignite) -->
+    <div id="intro-shockwave-burst" class="intro-shockwave-burst"></div>
+
+    <div class="intro-container">
+      
+      <!-- Top Status Header -->
+      <div class="intro-top-bar">
+        <div class="intro-institute-badge">
+          <span class="pulse-beacon"></span>
+          <span class="inst-name">NATIONAL INSTITUTE OF TECHNOLOGY RAIPUR</span>
+          <span class="inst-div">•</span>
+          <span class="inst-tag">OFFICIAL TECHNICAL COMMITTEE</span>
+        </div>
+        <div class="intro-live-clock" id="intro-live-clock">
+          <span class="clock-icon">⏳</span>
+          <span id="intro-time-display">2026 // SYSTEM ONLINE</span>
+        </div>
+      </div>
+
+      <!-- Main Interactive 3D Spatial Gateway Stage -->
+      <div class="intro-main-stage">
+
+        <!-- LEFT: both cards stacked -->
+        <div class="hud-left-stack">
+
+          <!-- System Telemetry -->
+          <aside class="spatial-hud-card hud-left glass-panel">
+            <div class="card-deco-corner tl"></div>
+            <div class="card-deco-corner br"></div>
+            <div class="hud-card-header">
+              <span class="hud-tag">// SYSTEM TELEMETRY</span>
+              <span class="hud-status-live">STABLE</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="tele-label">COORDINATES</span>
+              <span class="tele-val text-glow-gold">21.2497° N, 81.6050° E</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="tele-label">HEXTECH FLUX</span>
+              <span class="tele-val text-glow-cyan">432.8 Hz RESONANCE</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="tele-label">INSTITUTION</span>
+              <span class="tele-val">NIT RAIPUR • ESTD. 2007</span>
+            </div>
+            <div class="audio-equalizer-wrapper">
+              <div class="eq-label">ARCANE HARMONIC FLUX</div>
+              <div class="eq-bars-container">
+                <span class="eq-bar"></span>
+                <span class="eq-bar"></span>
+                <span class="eq-bar"></span>
+                <span class="eq-bar"></span>
+                <span class="eq-bar"></span>
+                <span class="eq-bar"></span>
+                <span class="eq-bar"></span>
+                <span class="eq-bar"></span>
+                <span class="eq-bar"></span>
+                <span class="eq-bar"></span>
+                <span class="eq-bar"></span>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Council Clearance -->
+          <aside class="spatial-hud-card hud-right glass-panel">
+            <div class="card-deco-corner tl"></div>
+            <div class="card-deco-corner br"></div>
+            <div class="hud-card-header">
+              <span class="hud-tag">// COUNCIL CLEARANCE</span>
+              <span class="hud-status-live gold">AUTHORIZED</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="tele-label">SECURITY TIER</span>
+              <span class="tele-val text-glow-gold">LEVEL 05 // UNRESTRICTED</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="tele-label">FESTIVAL ENGINES</span>
+              <span class="tele-val text-glow-purple">AAVARTAN '25 ACTIVE</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="tele-label">RESEARCH SQUADS</span>
+              <span class="tele-val text-glow-green">120+ VIGYAAN TEAMS</span>
+            </div>
+            <div class="battery-meter-container">
+              <div class="bm-header">
+                <span>HEXTECH CORE PURITY</span>
+                <span id="core-charge-val" class="text-glow-gold">100%</span>
+              </div>
+              <div class="bm-track">
+                <div class="bm-fill" id="core-charge-bar"></div>
+              </div>
+              <button class="bm-overcharge-btn" id="btn-overcharge-core">⚡ OVERCHARGE VOLTAGE</button>
+            </div>
+          </aside>
+
+        </div>
+
+        <!-- CENTER: gyro + title -->
+        <div class="intro-center-hero">
+
+          <div class="gyro-reactor-stage" id="gyro-reactor-stage" title="Move cursor to tilt 3D reactor • Click core to ignite!">
+            <div class="gyro-ring ring-outer" id="gyro-ring-outer">
+              <svg viewBox="0 0 400 400" class="gyro-svg">
+                <circle cx="200" cy="200" r="190" class="ring-track-outer"></circle>
+                <circle cx="200" cy="200" r="172" class="ring-track-gold" stroke-dasharray="10, 16"></circle>
+                <text x="200" y="28" text-anchor="middle" class="rune-glyph-large">᚛ ᚠ ᚢ ᚦ ᚜</text>
+                <text x="372" y="206" text-anchor="middle" class="rune-glyph-large">✦ ⚡ ✦</text>
+                <text x="200" y="384" text-anchor="middle" class="rune-glyph-large">᚛ ᚱ ᚲ ᚷ ᚜</text>
+                <text x="28" y="206" text-anchor="middle" class="rune-glyph-large">✦ ⚙ ✦</text>
+              </svg>
+            </div>
+
+            <div class="gyro-ring ring-middle" id="gyro-ring-middle">
+              <div class="middle-ring-border"></div>
+              <div class="middle-ring-nodes">
+                <span class="node n1"></span>
+                <span class="node n2"></span>
+                <span class="node n3"></span>
+                <span class="node n4"></span>
+              </div>
+            </div>
+
+            <div class="gyro-core-hub" id="hextech-core-btn">
+              <div class="core-shimmer-glow"></div>
+              <div class="core-energy-aura"></div>
+              <div class="crystal-gem-shape">
+                <div class="gem-facet f-top"></div>
+                <div class="gem-facet f-front"></div>
+                <div class="gem-facet f-back"></div>
+                <div class="gem-facet f-left"></div>
+                <div class="gem-facet f-right"></div>
+                <div class="gem-insignia">⚡</div>
+              </div>
+              <div class="core-shockwaves">
+                <span class="sw-1"></span>
+                <span class="sw-2"></span>
+                <span class="sw-3"></span>
+              </div>
+              <div class="core-hover-tooltip">CLICK TO DETONATE CORE</div>
+            </div>
+          </div>
+
+          <div class="intro-headline-wrapper">
+            <h1 class="intro-grand-title">
+              <span class="title-brand arcane-gold-text">TECHNOCRACY</span>
+            </h1>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 2. MAIN APPLICATION INTERFACE -->
+  <!-- ========================================================================= -->
+  <div id="main-app" class="main-app hidden">
+    
+    <!-- Top HUD Navigation Bar (Spatial Glass Header) -->
+    <header class="cyber-header" id="header">
+      <div class="header-container">
+        
+        <!-- Brand Logo with Arcane Hextech Gem -->
+        <a href="#hero" class="brand-logo" id="brand-logo">
+          <div class="brand-hextech-badge">
+            <div class="hex-gem-shape"></div>
+            <span class="brand-symbol">⚡</span>
+          </div>
+          <div class="brand-info">
+            <span class="brand-title arcane-gold-text">TECHNOCRACY</span>
+            <span class="brand-sub">NIT RAIPUR • ESTD. 2007</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="desktop-nav" id="desktop-nav">
+          <a href="#about" class="nav-link"><span class="nav-num">01.</span> About</a>
+          <a href="#history" class="nav-link"><span class="nav-num">02.</span> Chronicles</a>
+          <a href="#aavartan" class="nav-link"><span class="nav-num">03.</span> Aavartan</a>
+          <a href="#vigyaan" class="nav-link"><span class="nav-num">04.</span> Vigyaan</a>
+          <a href="#domains" class="nav-link"><span class="nav-num">05.</span> Domains</a>
+          <a href="#tech-team" class="nav-link"><span class="nav-num">06.</span> Tech Team</a>
+          <a href="#leadership" class="nav-link"><span class="nav-num">07.</span> Council</a>
+          <a href="#merch" class="nav-link"><span class="nav-num">08.</span> Merch</a>
+          <a href="#recruitment" class="nav-link highlight-link"><span class="nav-num">09.</span> Join Us</a>
+        </nav>
+
+        <!-- Right Quick Controls & Realm Switcher -->
+        <div class="header-actions">
+          
+          <!-- ARCANE REALM SWITCHER: PILTOVER (TOPSIDE GOLD) vs ZAUN (UNDERCITY GREEN) -->
+          <div class="realm-switcher-pill" id="realm-switcher" title="Toggle Arcane Realm: Piltover (Hextech Gold) / Zaun (Chemtech Toxic Green & Shimmer)">
+            <button class="realm-btn active" id="btn-realm-piltover" data-realm="piltover">
+              <span class="realm-icon">⚙️</span>
+              <span class="realm-name">PILTOVER</span>
+            </button>
+            <button class="realm-btn" id="btn-realm-zaun" data-realm="zaun">
+              <span class="realm-icon">🧪</span>
+              <span class="realm-name">ZAUN</span>
+            </button>
+          </div>
+
+          <!-- Web Audio Synth Mute/Unmute Toggle -->
+          <button id="btn-audio-toggle" class="hud-icon-btn" title="Toggle Arcane Hextech Soundscape">
+            <span class="audio-state-icon" id="audio-icon">🔊</span>
+          </button>
+
+          <!-- Terminal Launcher -->
+          <button id="btn-terminal-trigger" class="hud-icon-btn terminal-btn" title="Open Interactive Arcane Matrix Terminal (Try typing 'jinx', 'shimmer', 'vi')">
+            <span class="terminal-prompt">&gt;_</span>
+          </button>
+
+          <!-- Replay Intro Portal -->
+          <button id="btn-replay-intro" class="hud-icon-btn" title="Replay Cinematic Arcane Intro Portal">
+            <span>🌀</span>
+          </button>
+
+          <!-- Mobile Menu Hamburger -->
+          <button id="mobile-menu-toggle" class="mobile-toggle-btn" aria-label="Toggle navigation">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+        <div class="mobile-nav-header">
+          <span class="cyber-label">// ARCANE SYSTEM NAVIGATION</span>
+          <button id="mobile-menu-close" class="mobile-close-btn">&times;</button>
+        </div>
+        <div class="mobile-links">
+          <a href="#about" class="mob-link"><span>01.</span> About Technocracy</a>
+          <a href="#history" class="mob-link"><span>02.</span> Chronicles & Legacy (2007-2026)</a>
+          <a href="#aavartan" class="mob-link"><span>03.</span> Aavartan Tech Fest</a>
+          <a href="#vigyaan" class="mob-link"><span>04.</span> Vigyaan (10 Disciplines)</a>
+          <a href="#domains" class="mob-link"><span>05.</span> 7 Functional Domains</a>
+          <a href="#tech-team" class="mob-link"><span>06.</span> Tech Team Spotlight</a>
+          <a href="#leadership" class="mob-link"><span>07.</span> High Council Leadership</a>
+          <a href="#merch" class="mob-link"><span>08.</span> Official Merchandise (₹350)</a>
+          <a href="#recruitment" class="mob-link highlight"><span>09.</span> Induction & Join Us</a>
+        </div>
+        <div class="mobile-nav-footer">
+          <button class="cyber-btn btn-arcane primary-gold w-100" id="mob-terminal-btn">Open Arcane Terminal</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN SCROLLABLE CONTENT -->
+    <main class="page-main">
+
+      <!-- ========================================================================= -->
+      <!-- 3. HERO SECTION (SPATIAL MAXIMALIST COMPOSITION) -->
+      <!-- ========================================================================= -->
+      <section id="hero" class="hero-section">
+        <div class="hero-bg-runes"></div>
+        
+        <!-- Spatial Floating Decorative Glyphs -->
+        <div class="spatial-floating-rune rune-left" data-speed="0.2">᚛ ᚠ ᚢ ᚦ ᚜</div>
+        <div class="spatial-floating-rune rune-right" data-speed="-0.2">✦ ⚙ ✦</div>
+
+        <div class="container hero-container">
+          
+          <div class="hero-hud-badge">
+            <span class="pulse-dot"></span>
+            <span class="hud-text">NATIONAL INSTITUTE OF TECHNOLOGY RAIPUR • OFFICIAL TECHNICAL COMMITTEE</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="hero-title-prefix">FORGING THE IMPOSSIBLE THROUGH HEXTECH & CODE</span>
+            <span class="hero-title-core arcane-headline-gradient">TEAM TECHNOCRACY</span>
+            <span class="hero-title-suffix">INNOVATION • ALCHEMY • ENGINEERING</span>
+          </h1>
+
+          <p class="hero-description">
+            Established in 2007, Technocracy is the heartbeat of innovation at NIT Raipur. We build real-world software, foster cross-disciplinary research across 10 engineering domains, and orchestrate <strong>Aavartan</strong> — Central India's Largest Annual Technical Festival.
+          </p>
+
+          <!-- Core Call-to-Actions -->
+          <div class="hero-cta-grid">
+            <a href="#aavartan" class="cyber-btn btn-arcane primary-gold">
+              <span class="btn-icon">⚡</span>
+              <span class="btn-text">EXPLORE AAVARTAN</span>
+            </a>
+            <a href="#vigyaan" class="cyber-btn btn-arcane primary-purple">
+              <span class="btn-icon">🔬</span>
+              <span class="btn-text">VIGYAAN EXHIBITION</span>
+            </a>
+            <a href="#recruitment" class="cyber-btn btn-arcane secondary-ghost">
+              <span class="btn-icon">🚀</span>
+              <span class="btn-text">JOIN THE COMMITTEE</span>
+            </a>
+          </div>
+
+          <!-- Impact Metrics Spatial Hologram Cards with 3D Depth -->
+          <div class="hero-stats-banner">
+            <div class="stat-card glass-panel spatial-card" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="card-deco-corner br"></div>
+              <div class="stat-icon spatial-z-icon">🏛️</div>
+              <div class="stat-number text-glow-gold spatial-z-title" data-counter="18">18+</div>
+              <div class="stat-label">Years of Legacy</div>
+              <div class="stat-sub">Pioneering Since 2007</div>
+            </div>
+
+            <div class="stat-card glass-panel spatial-card" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="card-deco-corner br"></div>
+              <div class="stat-icon spatial-z-icon">👥</div>
+              <div class="stat-number text-glow-cyan spatial-z-title" data-counter="10000">10,000+</div>
+              <div class="stat-label">Annual Footfall</div>
+              <div class="stat-sub">Central India's Largest</div>
+            </div>
+
+            <div class="stat-card glass-panel spatial-card" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="card-deco-corner br"></div>
+              <div class="stat-icon spatial-z-icon">💡</div>
+              <div class="stat-number text-glow-purple spatial-z-title" data-counter="120">120+</div>
+              <div class="stat-label">Vigyaan Teams</div>
+              <div class="stat-sub">Across 10 Disciplines</div>
+            </div>
+
+            <div class="stat-card glass-panel spatial-card" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="card-deco-corner br"></div>
+              <div class="stat-icon spatial-z-icon">⚙️</div>
+              <div class="stat-number text-glow-green spatial-z-title" data-counter="7">7</div>
+              <div class="stat-label">Functional Wings</div>
+              <div class="stat-sub">Tech, Event, PR, Design...</div>
+            </div>
+          </div>
+        </div>
+
+        <a href="#about" class="scroll-down-indicator" aria-label="Scroll to about section">
+          <span class="scroll-text">ENTER PILTOVER ARCHIVES</span>
+          <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+          </div>
+        </a>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- 4. ABOUT SECTION (THE ECOSYSTEM & 4 PILLARS) -->
+      <!-- ========================================================================= -->
+      <section id="about" class="section-block about-section">
+        <div class="container">
+          
+          <div class="section-header">
+            <div class="section-tag">// ARCHIVE 01 : THE CHARTER</div>
+            <h2 class="section-title">WHAT IS <span class="text-glow-gold">TECHNOCRACY?</span></h2>
+            <div class="header-divider-filigree"><span>✦ ⚙ ✦</span></div>
+            <p class="section-subtitle">More than a club — a self-sustaining student institution dedicated to year-round technological excellence, research breakthroughs, and institutional leadership.</p>
+          </div>
+
+          <div class="about-grid">
+            <!-- Left Info Panel with Deco Framing -->
+            <div class="about-overview-card glass-panel spatial-card" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="card-deco-corner br"></div>
+              <div class="card-header-bar">
+                <span class="bar-dot gold"></span>
+                <span class="bar-dot purple"></span>
+                <span class="bar-dot green"></span>
+                <span class="bar-title">MISSION_PROTOCOL // NITRR_COUNCIL.LOG</span>
+              </div>
+              <div class="about-body-text">
+                <p>
+                  <strong>Team Technocracy</strong> is the official technical committee of the <strong>National Institute of Technology Raipur</strong>. Its mandate is to cultivate an elite technical, scientific, and innovation ecosystem within the institute.
+                </p>
+                <p>
+                  Unlike standard college clubs with sporadic workshops, Technocracy operates relentlessly year-round. Members architect production software systems, organize national-tier hackathons, incubate multidisciplinary engineering research, collaborate with major industries, and orchestrate <strong>Aavartan</strong>, Central India's undisputed flagship tech festival.
+                </p>
+                <div class="quote-box">
+                  <span class="quote-symbol">“</span>
+                  <em>"Dedicated to innovation, technical mastery, and unyielding passion for technology — empowering students to transform imagination into production reality."</em>
+                </div>
+              </div>
+
+              <div class="about-badges">
+                <span class="tech-tag">Official NIT Raipur Body</span>
+                <span class="tech-tag">Student Welfare Council</span>
+                <span class="tech-tag">CDC Associated</span>
+                <span class="tech-tag">10+ Engineering Streams</span>
+              </div>
+            </div>
+
+            <!-- Right: 4 Core Pillars of Technocracy -->
+            <div class="about-pillars-grid">
+              
+              <div class="pillar-card glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="pillar-number">PILLAR 01</div>
+                <div class="pillar-icon spatial-z-icon">⚡</div>
+                <h3 class="pillar-title">Technical Mastery & R&D</h3>
+                <p class="pillar-desc">Comprehensive hands-on mastery of full-stack web platforms, cloud architecture, autonomous robotics, IoT, and AI through production systems.</p>
+              </div>
+
+              <div class="pillar-card glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="pillar-number">PILLAR 02</div>
+                <div class="pillar-icon spatial-z-icon">🎪</div>
+                <h3 class="pillar-title">Aavartan Organization</h3>
+                <p class="pillar-desc">Architecting, directing, and executing Central India's premier tech festival with 10,000+ attendees and marquee corporate sponsors.</p>
+              </div>
+
+              <div class="pillar-card glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="pillar-number">PILLAR 03</div>
+                <div class="pillar-icon spatial-z-icon">🔬</div>
+                <h3 class="pillar-title">Vigyaan Science Expo</h3>
+                <p class="pillar-desc">Fostering multidisciplinary engineering research across 10 departments via structured technical documentation and live prototype demonstrations.</p>
+              </div>
+
+              <div class="pillar-card glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="pillar-number">PILLAR 04</div>
+                <div class="pillar-icon spatial-z-icon">🌐</div>
+                <h3 class="pillar-title">Industry & Alumni Network</h3>
+                <p class="pillar-desc">Connecting members with tech leaders, keynote speakers, research pioneers, and an illustrious alumni network spanning top global enterprises.</p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- 5. HISTORICAL ODYSSEY & TIMELINE (2007 - 2026) -->
+      <!-- ========================================================================= -->
+      <section id="history" class="section-block history-section">
+        <div class="container">
+          
+          <div class="section-header">
+            <div class="section-tag">// ARCHIVE 02 : THE CHRONICLES</div>
+            <h2 class="section-title">THE <span class="text-glow-gold">HISTORICAL ODYSSEY</span></h2>
+            <div class="header-divider-filigree"><span>✦ ⏳ ✦</span></div>
+            <p class="section-subtitle">Explore nearly two decades of technological evolution and milestones at NIT Raipur.</p>
+          </div>
+
+          <!-- Timeline Container with Arcane Circuit Track -->
+          <div class="timeline-container">
+            <div class="timeline-circuit-line">
+              <div class="circuit-pulse"></div>
+            </div>
+
+            <!-- Milestone 1: 2007 -->
+            <div class="timeline-item" data-year="2007">
+              <div class="timeline-marker">
+                <span class="marker-core"></span>
+              </div>
+              <div class="timeline-content glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="timeline-badge text-glow-gold">YEAR 2007</div>
+                <h3 class="timeline-title">The Genesis & Vigyaan Inception</h3>
+                <p class="timeline-text">
+                  A pioneering cadre of student tech visionaries at NIT Raipur established <strong>The Technocracy</strong> to ignite a student-led platform for science and engineering. Their first major breakthrough was <strong>Vigyaan</strong>, launched as a national-level science exhibition.
+                </p>
+                <div class="timeline-tags">
+                  <span>Genesis</span>
+                  <span>Vigyaan Exhibition</span>
+                  <span>Official Committee</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 2: 2011 -->
+            <div class="timeline-item" data-year="2011">
+              <div class="timeline-marker">
+                <span class="marker-core"></span>
+              </div>
+              <div class="timeline-content glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="timeline-badge text-glow-cyan">YEAR 2011</div>
+                <h3 class="timeline-title">Evolution into Aavartan</h3>
+                <p class="timeline-text">
+                  Vigyaan evolved and expanded into a grand annual technical festival — rechristened <strong>Aavartan</strong>. Competitive coding hackathons, robotics arenas, technical problem-solving, and guest lectures were integrated into a flagship multi-day celebration.
+                </p>
+                <div class="timeline-tags">
+                  <span>Aavartan Inception</span>
+                  <span>Mega Tech Fest</span>
+                  <span>Robotics Arenas</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 3: 2019 -->
+            <div class="timeline-item" data-year="2019">
+              <div class="timeline-marker">
+                <span class="marker-core"></span>
+              </div>
+              <div class="timeline-content glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="timeline-badge text-glow-purple">YEAR 2019</div>
+                <h3 class="timeline-title">The Quantum Leap: 10,000+ Footfall</h3>
+                <p class="timeline-text">
+                  Aavartan 2019 shattered records, hosting over 10,000 students and innovators nationwide, officially establishing Technocracy and Aavartan as <strong>Central India's Largest Tech Fest</strong>.
+                </p>
+                <div class="timeline-tags">
+                  <span>10k+ Footfall</span>
+                  <span>Central India #1</span>
+                  <span>National Stature</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 4: 2022-23 -->
+            <div class="timeline-item" data-year="2022-23">
+              <div class="timeline-marker">
+                <span class="marker-core"></span>
+              </div>
+              <div class="timeline-content glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="timeline-badge text-glow-green">YEAR 2022–2023</div>
+                <h3 class="timeline-title">The 14th Edition Grand Resurgence</h3>
+                <p class="timeline-text">
+                  Chronicled in NIT Raipur's <em>Shilpi</em> publication, Aavartan returned offline in grand fashion. Vigyaan alone registered <strong>120+ student research teams</strong>, while robotics, IoT, and software workshops drew nationwide acclaim.
+                </p>
+                <div class="timeline-tags">
+                  <span>14th Edition</span>
+                  <span>120+ Vigyaan Teams</span>
+                  <span>Shilpi Featured</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 5: Present & Beyond -->
+            <div class="timeline-item" data-year="2025-26">
+              <div class="timeline-marker">
+                <span class="marker-core"></span>
+              </div>
+              <div class="timeline-content glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="timeline-badge text-glow-gold">PRESENT & BEYOND</div>
+                <h3 class="timeline-title">The Arcane & Cybernetic Era</h3>
+                <p class="timeline-text">
+                  Today, Technocracy pioneers cutting-edge web architecture, autonomous agent systems, cross-discipline engineering prototypes, and high-octane festival experiences, setting new standards for collegiate excellence.
+                </p>
+                <div class="timeline-tags">
+                  <span>Full-Stack Platforms</span>
+                  <span>Generative AI</span>
+                  <span>Hextech Alchemy</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- 6. AAVARTAN — CENTRAL INDIA'S LARGEST TECH FEST -->
+      <!-- ========================================================================= -->
+      <section id="aavartan" class="section-block aavartan-section">
+        <div class="container">
+          
+          <div class="section-header">
+            <div class="section-tag">// ARCHIVE 03 : THE FLAGSHIP FESTIVAL</div>
+            <h2 class="section-title">THE PHENOMENON OF <span class="text-glow-purple">AAVARTAN</span></h2>
+            <div class="header-divider-filigree"><span>✦ ⚡ ✦</span></div>
+            <p class="section-subtitle">Central India's Largest Annual Technical Festival — where engineering marvels collide with electric cultural celebrations.</p>
+          </div>
+
+          <!-- Festival Highlights Grid -->
+          <div class="aavartan-grid">
+            
+            <div class="fest-card glass-panel spatial-card" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="fest-card-header">
+                <span class="fest-icon spatial-z-icon">💻</span>
+                <span class="fest-badge">TECH COMPETITIONS</span>
+              </div>
+              <h3 class="fest-card-title">Hackathons & Coding Battles</h3>
+              <p class="fest-card-desc">High-stakes 24/36-hour hackathons, algorithmic speed coding, bug bounty arenas, and rapid web sprints testing true engineering agility.</p>
+              <ul class="fest-feature-list">
+                <li>National-scale prize pools</li>
+                <li>Industry mentor evaluation</li>
+                <li>Real-world problem statements</li>
+              </ul>
+            </div>
+
+            <div class="fest-card glass-panel spatial-card" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="fest-card-header">
+                <span class="fest-icon spatial-z-icon">🤖</span>
+                <span class="fest-badge">HANDS-ON LABS</span>
+              </div>
+              <h3 class="fest-card-title">Robotics & Emerging Tech Workshops</h3>
+              <p class="fest-card-desc">Immersive workshops covering autonomous robotics, IoT architectures, Generative AI, cloud infrastructure, and embedded hardware design.</p>
+              <ul class="fest-feature-list">
+                <li>Hardware take-home kits</li>
+                <li>Certification upon completion</li>
+                <li>Direct alumni & mentor guidance</li>
+              </ul>
+            </div>
+
+            <div class="fest-card glass-panel spatial-card" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="fest-card-header">
+                <span class="fest-icon spatial-z-icon">🎙️</span>
+                <span class="fest-badge">KEYNOTE SESSIONS</span>
+              </div>
+              <h3 class="fest-card-title">Seminars & Alumni Tech Talks</h3>
+              <p class="fest-card-desc">Exclusive keynotes, career fireside chats, and deep-tech masterclasses with Fortune 500 engineering leads, researchers, and distinguished alumni.</p>
+              <ul class="fest-feature-list">
+                <li>Direct Q&A with tech pioneers</li>
+                <li>Career roadmap masterclasses</li>
+                <li>Industry trends & deep tech</li>
+              </ul>
+            </div>
+
+            <div class="fest-card glass-panel spatial-card" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="fest-card-header">
+                <span class="fest-icon spatial-z-icon">🎸</span>
+                <span class="fest-badge">CULTURAL NIGHTS</span>
+              </div>
+              <h3 class="fest-card-title">Nrityam, Raaga & DJ/EDM Night</h3>
+              <p class="fest-card-desc">Aavartan isn't just about code — the evenings explode with electrifying performances by <strong>Nrityam</strong> (Dance Club), <strong>Raaga</strong> (Music Club), and a star-studded EDM/DJ Night!</p>
+              <ul class="fest-feature-list">
+                <li>High-octane musical concert</li>
+                <li>Electrifying dance choreographies</li>
+                <li>Unforgettable stadium DJ night</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Festival Quick Action Banner with Arcane Gold Accents -->
+          <div class="aavartan-callout glass-panel spatial-card" data-tilt>
+            <div class="card-deco-corner tl"></div>
+            <div class="card-deco-corner br"></div>
+            <div class="callout-text">
+              <h3 class="callout-title">READY TO COMPETE IN AAVARTAN '25?</h3>
+              <p>Join thousands of innovators, engineers, and creators from across the nation.</p>
+            </div>
+            <div class="callout-actions">
+              <button class="cyber-btn btn-arcane primary-gold" id="btn-fest-reg-trigger">
+                <span class="btn-text">GET EVENT PASSES</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- 7. VIGYAAN — 10 ENGINEERING DISCIPLINES EXHIBITION -->
+      <!-- ========================================================================= -->
+      <section id="vigyaan" class="section-block vigyaan-section">
+        <div class="container">
+          
+          <div class="section-header">
+            <div class="section-tag">// ARCHIVE 04 : THE SCIENCE EXHIBITION</div>
+            <h2 class="section-title">VIGYAAN : <span class="text-glow-green">THE INNOVATION EXPO</span></h2>
+            <div class="header-divider-filigree"><span>✦ 🔬 ✦</span></div>
+            <p class="section-subtitle">The flagship multi-disciplinary science & innovation competition where ideas evolve from rigorous documentation into working prototypes.</p>
+          </div>
+
+          <!-- How Vigyaan Works Banner -->
+          <div class="vigyaan-process-grid">
+            <div class="process-step glass-panel spatial-card" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="step-num text-glow-cyan">STAGE 01</div>
+              <h4 class="step-heading">Team Formation</h4>
+              <p class="step-desc">Form a focused research squad of <strong>2 to 3 members</strong> across any engineering specialization.</p>
+            </div>
+            <div class="process-step glass-panel spatial-card" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="step-num text-glow-gold">STAGE 02</div>
+              <h4 class="step-heading">Problem Documentation</h4>
+              <p class="step-desc">Submit in-depth technical documentation, literature survey, and proposed architectural solution.</p>
+            </div>
+            <div class="process-step glass-panel spatial-card" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="step-num text-glow-purple">STAGE 03</div>
+              <h4 class="step-heading">Live Implementation</h4>
+              <p class="step-desc">Shortlisted teams build and demonstrate physical prototypes or live software systems before expert juries.</p>
+            </div>
+          </div>
+
+          <!-- 10 Disciplines Interactive Filter / Tab System -->
+          <div class="vigyaan-explorer glass-panel spatial-card">
+            <div class="card-deco-corner tl"></div>
+            <div class="card-deco-corner br"></div>
+            <div class="explorer-top-bar">
+              <span class="explorer-label">// SELECT ENGINEERING DOMAIN (10 DISCIPLINES)</span>
+              <span class="explorer-counter" id="domain-active-counter">ACTIVE: CSE / IT / MCA</span>
+            </div>
+
+            <!-- Domain Tabs -->
+            <div class="domain-tabs-nav" id="vigyaan-tabs">
+              <button class="domain-tab active" data-domain="cse">CSE / IT / MCA</button>
+              <button class="domain-tab" data-domain="ece">ECE</button>
+              <button class="domain-tab" data-domain="ee">EE</button>
+              <button class="domain-tab" data-domain="mech">Mechanical</button>
+              <button class="domain-tab" data-domain="civil">Civil</button>
+              <button class="domain-tab" data-domain="chem">Chemical</button>
+              <button class="domain-tab" data-domain="biotech">Biotechnology</button>
+              <button class="domain-tab" data-domain="biomed">Biomedical</button>
+              <button class="domain-tab" data-domain="meta">Metallurgy</button>
+              <button class="domain-tab" data-domain="mining">Mining</button>
+            </div>
+
+            <!-- Dynamic Domain Detail Display -->
+            <div class="domain-content-display" id="vigyaan-content-box">
+              <!-- Content rendered by JavaScript -->
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- 8. THE 7 FUNCTIONAL DOMAINS / TEAMS -->
+      <!-- ========================================================================= -->
+      <section id="domains" class="section-block domains-section">
+        <div class="container">
+          
+          <div class="section-header">
+            <div class="section-tag">// ARCHIVE 05 : THE SEVEN GUILDS</div>
+            <h2 class="section-title">THE 7 <span class="text-glow-gold">FUNCTIONAL DOMAINS</span></h2>
+            <div class="header-divider-filigree"><span>✦ 🛡️ ✦</span></div>
+            <p class="section-subtitle">Technocracy operates as a multi-department powerhouse where diverse skill sets converge to engineer success.</p>
+          </div>
+
+          <!-- Domain Card Grid -->
+          <div class="wings-grid">
+            
+            <div class="wing-card glass-panel spatial-card" data-wing="tech" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="wing-icon-wrapper spatial-z-icon">
+                <span class="wing-icon">💻</span>
+              </div>
+              <h3 class="wing-name text-glow-cyan">Tech Team</h3>
+              <p class="wing-tagline">"Bringing Imagination to Life"</p>
+              <p class="wing-description">The engineering powerhouse responsible for architecting and deploying official web platforms, mobile systems, scoring APIs, and live hackathon infrastructure.</p>
+              <div class="wing-skills">
+                <span>React / Next.js</span>
+                <span>Node / APIs</span>
+                <span>Cloud & DevOps</span>
+                <span>UI/UX Code</span>
+              </div>
+            </div>
+
+            <div class="wing-card glass-panel spatial-card" data-wing="event" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="wing-icon-wrapper spatial-z-icon">
+                <span class="wing-icon">🎯</span>
+              </div>
+              <h3 class="wing-name text-glow-gold">Event Management</h3>
+              <p class="wing-tagline">"Mastering Grand Logistics"</p>
+              <p class="wing-description">Orchestrates the entire physical & digital execution of Aavartan, competition timelines, venue setups, judge coordination, and crowd management for 10k+ attendees.</p>
+              <div class="wing-skills">
+                <span>Crisis Management</span>
+                <span>Stage Planning</span>
+                <span>Operations</span>
+                <span>Scheduling</span>
+              </div>
+            </div>
+
+            <div class="wing-card glass-panel spatial-card" data-wing="vigyaan" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="wing-icon-wrapper spatial-z-icon">
+                <span class="wing-icon">🔬</span>
+              </div>
+              <h3 class="wing-name text-glow-green">Vigyaan Team</h3>
+              <p class="wing-tagline">"Incubating Scientific Breakthroughs"</p>
+              <p class="wing-description">Drives the national science exhibition, curates multidisciplinary problem statements, coordinates technical juries, and evaluates groundbreaking prototypes.</p>
+              <div class="wing-skills">
+                <span>R&D Curation</span>
+                <span>Project Audits</span>
+                <span>Jury Logistics</span>
+                <span>Science Outreach</span>
+              </div>
+            </div>
+
+            <div class="wing-card glass-panel spatial-card" data-wing="sponsorship" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="wing-icon-wrapper spatial-z-icon">
+                <span class="wing-icon">🤝</span>
+              </div>
+              <h3 class="wing-name text-glow-purple">Sponsorship & PR</h3>
+              <p class="wing-tagline">"Connecting with Industry Giants"</p>
+              <p class="wing-description">Bridges Technocracy with corporate leaders, pitching sponsorship decks, negotiating partnership deliverables, and securing funding and tech perks.</p>
+              <div class="wing-skills">
+                <span>Corporate Pitching</span>
+                <span>Negotiations</span>
+                <span>Brand Deals</span>
+                <span>Networking</span>
+              </div>
+            </div>
+
+            <div class="wing-card glass-panel spatial-card" data-wing="media" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="wing-icon-wrapper spatial-z-icon">
+                <span class="wing-icon">📣</span>
+              </div>
+              <h3 class="wing-name text-glow-cyan">Media & Public Relations</h3>
+              <p class="wing-tagline">"Amplifying the Voice of Innovation"</p>
+              <p class="wing-description">Commands the digital and offline narrative of Technocracy through high-engagement social media campaigns, official press releases, and nationwide promotions.</p>
+              <div class="wing-skills">
+                <span>Social Strategy</span>
+                <span>Publicity Sprints</span>
+                <span>Copywriting</span>
+                <span>Press Outreach</span>
+              </div>
+            </div>
+
+            <div class="wing-card glass-panel spatial-card" data-wing="design" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="wing-icon-wrapper spatial-z-icon">
+                <span class="wing-icon">🎨</span>
+              </div>
+              <h3 class="wing-name text-glow-purple">Design & Editing</h3>
+              <p class="wing-tagline">"Crafting Visual Masterpieces"</p>
+              <p class="wing-description">The creative visionaries crafting branding, cyber posters, 3D motion graphics, festival merchandise, teaser trailers, and digital UI aesthetics.</p>
+              <div class="wing-skills">
+                <span>Figma / UI</span>
+                <span>Blender / 3D</span>
+                <span>After Effects</span>
+                <span>Brand Identity</span>
+              </div>
+            </div>
+
+            <div class="wing-card glass-panel spatial-card" data-wing="doc" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="wing-icon-wrapper spatial-z-icon">
+                <span class="wing-icon">📑</span>
+              </div>
+              <h3 class="wing-name text-glow-gold">Documentation</h3>
+              <p class="wing-tagline">"Archiving the Legacy"</p>
+              <p class="wing-description">Maintains institutional records, official proposals to the institute, participant databases, administrative MoUs, and comprehensive post-event analytical reports.</p>
+              <div class="wing-skills">
+                <span>Technical Writing</span>
+                <span>Report Synthesis</span>
+                <span>Institutional MoUs</span>
+                <span>Data Records</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- 9. TECH TEAM SPOTLIGHT ("BRINGING IMAGINATION TO LIFE") -->
+      <!-- ========================================================================= -->
+      <section id="tech-team" class="section-block tech-team-section">
+        <div class="container">
+          
+          <div class="section-header">
+            <div class="section-tag">// ARCHIVE 06 : HEXTECH ARCHITECTS</div>
+            <h2 class="section-title">THE <span class="text-glow-cyan">TECH TEAM</span></h2>
+            <div class="header-divider-filigree"><span>✦ ⚙️ ✦</span></div>
+            <p class="section-subtitle">"Bringing Imagination to Life" — The developers crafting the digital infrastructure, web portals, and software systems of Technocracy.</p>
+          </div>
+
+          <!-- Tech Team Hierarchy Display -->
+          <div class="tech-team-grid">
+            
+            <!-- Head Coordinator -->
+            <div class="tech-card head-card glass-panel spatial-card" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="card-deco-corner br"></div>
+              <div class="tech-badge-ribbon">HEAD COORDINATOR</div>
+              <div class="tech-avatar-circle spatial-z-icon">
+                <span class="avatar-rune">PK</span>
+              </div>
+              <h3 class="tech-name">Piyush Kumar</h3>
+              <div class="tech-role text-glow-cyan">Head Coordinator // Tech</div>
+              <p class="tech-bio">Leading technical architecture, full-stack systems engineering, and developer mentorship for Technocracy platforms.</p>
+              <div class="tech-skills-micro">
+                <span>Architecture</span>
+                <span>Full-Stack</span>
+                <span>Team Lead</span>
+              </div>
+            </div>
+
+            <!-- Core Coordinators -->
+            <div class="tech-subgrid">
+              
+              <div class="tech-card core-card glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="tech-badge-ribbon-sub">CORE COORDINATOR</div>
+                <div class="tech-avatar-circle sub spatial-z-icon">
+                  <span class="avatar-rune">NS</span>
+                </div>
+                <h4 class="tech-name">Nehil Sahu</h4>
+                <div class="tech-role text-glow-purple">Core Coordinator // Tech</div>
+                <p class="tech-bio">Frontend engineering, UI animations, and responsive web systems.</p>
+              </div>
+
+              <div class="tech-card core-card glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="tech-badge-ribbon-sub">CORE COORDINATOR</div>
+                <div class="tech-avatar-circle sub spatial-z-icon">
+                  <span class="avatar-rune">DR</span>
+                </div>
+                <h4 class="tech-name">B. Deewakar Rao</h4>
+                <div class="tech-role text-glow-purple">Core Coordinator // Tech</div>
+                <p class="tech-bio">Backend architecture, databases, and authentication protocols.</p>
+              </div>
+
+              <div class="tech-card core-card glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="tech-badge-ribbon-sub">CORE COORDINATOR</div>
+                <div class="tech-avatar-circle sub spatial-z-icon">
+                  <span class="avatar-rune">AS</span>
+                </div>
+                <h4 class="tech-name">Aditya Kumar Sah</h4>
+                <div class="tech-role text-glow-purple">Core Coordinator // Tech</div>
+                <p class="tech-bio">Interactive web components, client performance, and API integration.</p>
+              </div>
+
+              <div class="tech-card core-card glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="tech-badge-ribbon-sub">CORE COORDINATOR</div>
+                <div class="tech-avatar-circle sub spatial-z-icon">
+                  <span class="avatar-rune">PS</span>
+                </div>
+                <h4 class="tech-name">Prabhat Sharma</h4>
+                <div class="tech-role text-glow-purple">Core Coordinator // Tech</div>
+                <p class="tech-bio">DevOps, server deployment pipelines, and system maintenance.</p>
+              </div>
+
+            </div>
+
+            <!-- Executives -->
+            <div class="tech-exec-row">
+              <div class="exec-card glass-panel spatial-card" data-tilt>
+                <span class="exec-icon spatial-z-icon">⚡</span>
+                <div class="exec-info">
+                  <h5 class="exec-name">Ayush Patel</h5>
+                  <span class="exec-role">Executive // Tech</span>
+                </div>
+              </div>
+
+              <div class="exec-card glass-panel spatial-card" data-tilt>
+                <span class="exec-icon spatial-z-icon">⚡</span>
+                <div class="exec-info">
+                  <h5 class="exec-name">Devesh Agarwal</h5>
+                  <span class="exec-role">Executive // Tech</span>
+                </div>
+              </div>
+
+              <div class="exec-card glass-panel spatial-card" data-tilt>
+                <span class="exec-icon spatial-z-icon">⚡</span>
+                <div class="exec-info">
+                  <h5 class="exec-name">Gourav Deep Shahni</h5>
+                  <span class="exec-role">Executive // Tech</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Interactive Tech Stack Radar -->
+          <div class="tech-stack-terminal glass-panel spatial-card">
+            <div class="card-deco-corner tl"></div>
+            <div class="terminal-bar">
+              <span class="terminal-title">TECHNOCRACY_STACK_STATUS.LOG</span>
+              <span class="terminal-badge">RUNNING V2.5.0</span>
+            </div>
+            <div class="terminal-body">
+              <div class="stack-tags-cloud">
+                <span class="st-item"><span class="st-dot cyan"></span>React.js / Next.js</span>
+                <span class="st-item"><span class="st-dot purple"></span>Node.js / Express</span>
+                <span class="st-item"><span class="st-dot gold"></span>Web Audio Synth</span>
+                <span class="st-item"><span class="st-dot emerald"></span>Spatial Canvas Physics</span>
+                <span class="st-item"><span class="st-dot cyan"></span>Maximalist Architecture</span>
+                <span class="st-item"><span class="st-dot purple"></span>Git / GitHub Workflows</span>
+                <span class="st-item"><span class="st-dot gold"></span>Vercel / Cloudflare CI/CD</span>
+                <span class="st-item"><span class="st-dot emerald"></span>REST & GraphQL APIs</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- 10. OVERALL LEADERSHIP & COMMITTEE STRUCTURE -->
+      <!-- ========================================================================= -->
+      <section id="leadership" class="section-block leadership-section">
+        <div class="container">
+          
+          <div class="section-header">
+            <div class="section-tag">// ARCHIVE 07 : HIGH COUNCIL</div>
+            <h2 class="section-title">THE EXECUTIVE <span class="text-glow-gold">COUNCIL</span></h2>
+            <div class="header-divider-filigree"><span>✦ 👑 ✦</span></div>
+            <p class="section-subtitle">The student leadership driving the strategic vision, administration, and execution of Technocracy NIT Raipur.</p>
+          </div>
+
+          <!-- Overall Coordinators -->
+          <div class="leadership-tier">
+            <h3 class="tier-label">// OVERALL COORDINATORS</h3>
+            <div class="oc-grid">
+              
+              <div class="oc-card glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="oc-avatar spatial-z-icon">SV</div>
+                <h4 class="oc-name">Shivam Vyas</h4>
+                <div class="oc-title text-glow-gold">Overall Coordinator</div>
+                <span class="oc-badge">Executive Council</span>
+              </div>
+
+              <div class="oc-card glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="oc-avatar spatial-z-icon">PM</div>
+                <h4 class="oc-name">Prafulla Mishra</h4>
+                <div class="oc-title text-glow-gold">Overall Coordinator</div>
+                <span class="oc-badge">Executive Council</span>
+              </div>
+
+              <div class="oc-card glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="oc-avatar spatial-z-icon">ST</div>
+                <h4 class="oc-name">Shantanu Tripathy</h4>
+                <div class="oc-title text-glow-gold">Overall Coordinator</div>
+                <span class="oc-badge">Executive Council</span>
+              </div>
+
+              <div class="oc-card glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="oc-avatar spatial-z-icon">NK</div>
+                <h4 class="oc-name">Nimesh Kumar Kashyap</h4>
+                <div class="oc-title text-glow-gold">Overall Coordinator</div>
+                <span class="oc-badge">Executive Council</span>
+              </div>
+
+              <div class="oc-card glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="oc-avatar spatial-z-icon">CR</div>
+                <h4 class="oc-name">Chirag Ruchandani</h4>
+                <div class="oc-title text-glow-gold">Overall Coordinator</div>
+                <span class="oc-badge">Executive Council</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Department Head Coordinators -->
+          <div class="leadership-tier">
+            <h3 class="tier-label">// DEPARTMENT HEAD COORDINATORS</h3>
+            <div class="head-grid">
+              
+              <div class="dept-head-card glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="dept-badge text-glow-cyan">TECH</div>
+                <div class="head-names">
+                  <strong>Prabhat Sharma</strong>
+                </div>
+              </div>
+
+              <div class="dept-head-card glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="dept-badge text-glow-purple">DESIGN & EDITING</div>
+                <div class="head-names">
+                  <strong>Ankush Jaiswal</strong>
+                  <span>•</span>
+                  <strong>Akshat Jain</strong>
+                </div>
+              </div>
+
+              <div class="dept-head-card glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="dept-badge text-glow-gold">EVENT MANAGEMENT</div>
+                <div class="head-names">
+                  <strong>Supriya Mishra</strong>
+                  <span>•</span>
+                  <strong>Aviraj Mehar</strong>
+                  <span>•</span>
+                  <strong>Lucky Dewangan</strong>
+                </div>
+              </div>
+
+              <div class="dept-head-card glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="dept-badge text-glow-green">VIGYAAN</div>
+                <div class="head-names">
+                  <strong>Danish Khan</strong>
+                  <span>•</span>
+                  <strong>Shruti Kotkar</strong>
+                  <span>•</span>
+                  <strong>Surjiyanshi Mishra</strong>
+                </div>
+              </div>
+
+              <div class="dept-head-card glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="dept-badge text-glow-cyan">MEDIA & PR</div>
+                <div class="head-names">
+                  <strong>Bheema</strong>
+                  <span>•</span>
+                  <strong>Deedhit Parihar</strong>
+                </div>
+              </div>
+
+              <div class="dept-head-card glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="dept-badge text-glow-gold">DOCUMENTATION</div>
+                <div class="head-names">
+                  <strong>Kailash Mistry</strong>
+                  <span>•</span>
+                  <strong>Aashish Shukla</strong>
+                </div>
+              </div>
+
+              <div class="dept-head-card glass-panel spatial-card" data-tilt>
+                <div class="card-deco-corner tl"></div>
+                <div class="dept-badge text-glow-purple">SPONSORSHIP</div>
+                <div class="head-names">
+                  <strong>Rudrapratap Patel</strong>
+                  <span>•</span>
+                  <strong>Shrutikshan P K Kumar</strong>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- 11. OFFICIAL MERCHANDISE (AAVARTAN '25 EDITION - ₹350) -->
+      <!-- ========================================================================= -->
+      <section id="merch" class="section-block merch-section">
+        <div class="container">
+          
+          <div class="section-header">
+            <div class="section-tag">// ARCHIVE 08 : OFFICIAL APPAREL</div>
+            <h2 class="section-title">AAVARTAN <span class="text-glow-gold">MERCHANDISE</span></h2>
+            <div class="header-divider-filigree"><span>✦ 👕 ✦</span></div>
+            <p class="section-subtitle">Wear the spirit of innovation. Limited edition Arcane-themed Aavartan apparel at just <strong>₹350</strong>.</p>
+          </div>
+
+          <div class="merch-showcase-wrapper glass-panel spatial-card" data-tilt>
+            <div class="card-deco-corner tl"></div>
+            <div class="card-deco-corner br"></div>
+            
+            <!-- Left: 3D Holographic Merch Display -->
+            <div class="merch-display-side">
+              <div class="merch-hologram-stage" id="merch-stage">
+                <div class="hologram-emitter"></div>
+                <div class="merch-visual-card spatial-card" id="merch-card">
+                  <div class="merch-graphic">
+                    <div class="merch-hoodie-icon spatial-z-icon" id="merch-icon">👕</div>
+                    <div class="merch-glow-ring"></div>
+                  </div>
+                  <div class="merch-badge-price spatial-z-title">₹350 ONLY</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Interactive Customizer & Order -->
+            <div class="merch-control-side">
+              <div class="merch-meta-header">
+                <span class="merch-tag">LIMITED OFFICIAL DROP // HEXTECH WEAR</span>
+                <h3 class="merch-product-name arcane-gold-text">Aavartan '25 Arcane-Hex Tee / Hoodie</h3>
+                <div class="merch-price-display">
+                  <span class="current-price">₹350</span>
+                  <span class="original-price">₹699</span>
+                  <span class="discount-badge">50% STUDENT PRIVILEGE</span>
+                </div>
+              </div>
+
+              <p class="merch-description">
+                Crafted with premium 240 GSM bio-washed heavy cotton, featuring high-density Arcane runic screen prints, luminous Piltover gold & Zaun shimmer back art, and the official NIT Raipur Technocracy seal.
+              </p>
+
+              <!-- Color Selector -->
+              <div class="merch-option-group">
+                <label class="option-label">SELECT HEXTECH SHADE:</label>
+                <div class="color-options" id="color-options">
+                  <button class="color-btn active" data-color="obsidian" title="Obsidian Void" style="background:#0b0f19;"></button>
+                  <button class="color-btn" data-color="gold" title="Piltover Gold" style="background:#d4af37;"></button>
+                  <button class="color-btn" data-color="purple" title="Zaunite Shimmer" style="background:#7b5cff;"></button>
+                  <button class="color-btn" data-color="green" title="Chemtech Emerald" style="background:#00e68a;"></button>
+                </div>
+              </div>
+
+              <!-- Size Selector -->
+              <div class="merch-option-group">
+                <label class="option-label">SELECT SIZE:</label>
+                <div class="size-options" id="size-options">
+                  <button class="size-btn">S</button>
+                  <button class="size-btn active">M</button>
+                  <button class="size-btn">L</button>
+                  <button class="size-btn">XL</button>
+                  <button class="size-btn">XXL</button>
+                </div>
+              </div>
+
+              <!-- Action Trigger -->
+              <div class="merch-action-row">
+                <button class="cyber-btn btn-arcane primary-gold" id="btn-order-merch">
+                  <span class="btn-icon">🛒</span>
+                  <span class="btn-text">RESERVE GEAR (₹350)</span>
+                </button>
+                <span class="merch-shipping-note">⚡ Direct collection at Aavartan Campus Desk / NIT Raipur</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- 12. RECRUITMENT & JOIN US (INTERACTIVE DOMAIN MATCHER) -->
+      <!-- ========================================================================= -->
+      <section id="recruitment" class="section-block recruitment-section">
+        <div class="container">
+          
+          <div class="section-header">
+            <div class="section-tag">// ARCHIVE 09 : INDUCTION PORTAL</div>
+            <h2 class="section-title">JOIN <span class="text-glow-purple">TECHNOCRACY</span></h2>
+            <div class="header-divider-filigree"><span>✦ 🚀 ✦</span></div>
+            <p class="section-subtitle">No matter your branch or experience level — step into NIT Raipur's premier technical committee and build lasting mastery.</p>
+          </div>
+
+          <!-- Why Join Grid -->
+          <div class="why-join-grid">
+            <div class="why-card glass-panel spatial-card" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="why-icon spatial-z-icon">⚡</div>
+              <h4>Production Experience</h4>
+              <p>Engineer live web platforms, APIs, hackathon architectures, and grand logistics that elevate your resume far above routine coursework.</p>
+            </div>
+            <div class="why-card glass-panel spatial-card" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="why-icon spatial-z-icon">🌐</div>
+              <h4>Elite Network</h4>
+              <p>Collaborate with distinguished seniors, industry mentors, and alumni across global tech leaders who guide your career path.</p>
+            </div>
+            <div class="why-card glass-panel spatial-card" data-tilt>
+              <div class="card-deco-corner tl"></div>
+              <div class="why-icon spatial-z-icon">🎖️</div>
+              <h4>All Streams Welcome</h4>
+              <p>You don't need to be a coding prodigy. 1st-year volunteering and hands-on tracks empower any passionate student to rise.</p>
+            </div>
+          </div>
+
+          <!-- Interactive "Which Domain Fits You?" Quiz -->
+          <div class="domain-quiz-container glass-panel spatial-card">
+            <div class="card-deco-corner tl"></div>
+            <div class="card-deco-corner br"></div>
+            <div class="quiz-header-bar">
+              <span class="quiz-badge">INTERACTIVE DOMAIN FINDER</span>
+              <h3 class="quiz-title arcane-gold-text">Find Your Calling in Technocracy</h3>
+              <p class="quiz-desc">Answer 3 quick questions to discover which of the 7 functional domains matches your passions best.</p>
+            </div>
+
+            <div id="quiz-step-box" class="quiz-step-box">
+              <!-- Rendered dynamically by main.js -->
+            </div>
+          </div>
+
+          <!-- Direct Application Callout -->
+          <div class="application-banner glass-panel spatial-card" data-tilt>
+            <div class="card-deco-corner tl"></div>
+            <div class="card-deco-corner br"></div>
+            <div class="banner-content">
+              <h3>READY TO SUBMIT YOUR OFFICIAL APPLICATION?</h3>
+              <p>Recruitment drives are open for both 1st year volunteers and 2nd/3rd year executive roles.</p>
+            </div>
+            <button class="cyber-btn btn-arcane primary-gold" id="btn-open-application-modal">
+              <span class="btn-icon">🚀</span>
+              <span class="btn-text">SUBMIT CANDIDATURE</span>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ========================================================================= -->
+    <!-- 13. FOOTER -->
+    <!-- ========================================================================= -->
+    <footer class="cyber-footer">
+      <div class="container footer-container">
+        
+        <div class="footer-col brand-col">
+          <div class="footer-brand">
+            <span class="footer-symbol">⚡</span>
+            <span class="footer-title arcane-gold-text">TEAM TECHNOCRACY</span>
+          </div>
+          <p class="footer-desc">
+            The Official Technical Committee of National Institute of Technology Raipur (NITRR). Catalyzing technology, innovation, and leadership since 2007.
+          </p>
+          <div class="footer-socials">
+            <a href="https://technocracy.nitrr.ac.in" target="_blank" rel="noopener" class="social-link" title="Official Website">🌐</a>
+            <a href="https://nitrr.ac.in" target="_blank" rel="noopener" class="social-link" title="NIT Raipur Portal">🏛️</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-link" title="Instagram">📸</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link" title="LinkedIn">💼</a>
+            <a href="https://github.com" target="_blank" rel="noopener" class="social-link" title="GitHub">🐙</a>
+          </div>
+        </div>
+
+        <div class="footer-col links-col">
+          <h4 class="footer-col-title">NAVIGATION</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About Committee</a></li>
+            <li><a href="#history">Chronicles Timeline</a></li>
+            <li><a href="#aavartan">Aavartan Festival</a></li>
+            <li><a href="#vigyaan">Vigyaan Exhibition</a></li>
+            <li><a href="#domains">7 Functional Wings</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col links-col">
+          <h4 class="footer-col-title">COMMUNITY</h4>
+          <ul class="footer-links">
+            <li><a href="#tech-team">Tech Team Spotlight</a></li>
+            <li><a href="#leadership">Executive Council</a></li>
+            <li><a href="#merch">Official Gear (₹350)</a></li>
+            <li><a href="#recruitment">Induction Portal</a></li>
+            <li><a href="javascript:void(0)" id="footer-terminal-link">Open Arcane Terminal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact-col">
+          <h4 class="footer-col-title">NIT RAIPUR CAMPUS</h4>
+          <p class="footer-address">
+            National Institute of Technology Raipur<br>
+            G.E. Road, Raipur, Chhattisgarh — 492010<br>
+            <strong>Email:</strong> technocracy@nitrr.ac.in
+          </p>
+          <div class="server-status-pill">
+            <span class="status-dot green"></span>
+            <span>PILTOVER MAINFRAME: ACTIVE // 2026</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div class="container footer-bottom-flex">
+          <p>© 2007–2026 Team Technocracy, NIT Raipur. All Rights Reserved.</p>
+          <p class="designed-with">Crafted with <span class="heart-pulse">✦</span> Spatial Hextech Alchemy & Maximalist Precision</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 14. INTERACTIVE CYBER/ARCANE MATRIX TERMINAL MODAL -->
+  <!-- ========================================================================= -->
+  <div id="terminal-modal" class="modal-backdrop hidden">
+    <div class="terminal-window glass-panel spatial-card">
+      <div class="card-deco-corner tl"></div>
+      <div class="card-deco-corner br"></div>
+      
+      <div class="terminal-titlebar">
+        <div class="terminal-controls">
+          <span class="ctrl close" id="term-close-btn"></span>
+          <span class="ctrl min"></span>
+          <span class="ctrl max"></span>
+        </div>
+        <div class="terminal-caption">ARCANE_HEXTECH_MAINFRAME // v2.6.0</div>
+        <div class="terminal-actions">
+          <button class="term-mini-btn" id="term-clear-btn">CLEAR</button>
+        </div>
+      </div>
+
+      <div class="terminal-screen" id="terminal-output">
+        <div class="term-line welcome-line text-glow-gold">
+          ====================================================================<br>
+          ✦ TECHNOCRACY // NIT RAIPUR HEXTECH MAINFRAME [ONLINE]<br>
+          ====================================================================<br>
+          Type <span class="term-keyword">'help'</span> for command manual.<br>
+          ⚡ Arcane Easter Eggs: Try <span class="term-keyword">'jinx'</span>, <span class="term-keyword">'shimmer'</span>, <span class="term-keyword">'vi'</span>, <span class="term-keyword">'viktor'</span>, <span class="term-keyword">'silco'</span>, <span class="term-keyword">'ekko'</span>, <span class="term-keyword">'hexcore'</span>, <span class="term-keyword">'piltover'</span>, <span class="term-keyword">'zaun'</span>!
+        </div>
+      </div>
+
+      <div class="terminal-input-row">
+        <span class="term-user-prompt">hextech@nitrr:~$</span>
+        <input type="text" id="terminal-input" class="term-input-field" placeholder="Enter command (e.g. help, jinx, aavartan)..." autocomplete="off" spellcheck="false">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 15. RECRUITMENT & EVENT REGISTRATION MODAL -->
+  <!-- ========================================================================= -->
+  <div id="app-modal" class="modal-backdrop hidden">
+    <div class="modal-box glass-panel spatial-card">
+      <div class="card-deco-corner tl"></div>
+      <div class="card-deco-corner br"></div>
+      <button class="modal-close-x" id="app-modal-close">&times;</button>
+      
+      <div class="modal-header">
+        <div class="modal-tag">// CANDIDATURE SUBMISSION</div>
+        <h3 class="modal-title arcane-gold-text">Join Team Technocracy</h3>
+        <p class="modal-sub">Step into NIT Raipur's premier technical committee.</p>
+      </div>
+
+      <form id="recruitment-form" class="cyber-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="applicant-name">Full Name *</label>
+            <input type="text" id="applicant-name" class="cyber-input" placeholder="e.g. Alex Sharma" required>
+          </div>
+          <div class="form-group">
+            <label for="applicant-roll">Roll Number / Registration No *</label>
+            <input type="text" id="applicant-roll" class="cyber-input" placeholder="e.g. 23118099" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="applicant-branch">Branch / Department *</label>
+            <select id="applicant-branch" class="cyber-input" required>
+              <option value="">Select Branch</option>
+              <option value="it">Information Technology (IT)</option>
+              <option value="cse">Computer Science & Engineering (CSE)</option>
+              <option value="ece">Electronics & Communication (ECE)</option>
+              <option value="ee">Electrical Engineering (EE)</option>
+              <option value="mech">Mechanical Engineering</option>
+              <option value="civil">Civil Engineering</option>
+              <option value="chem">Chemical Engineering</option>
+              <option value="biotech">Biotechnology</option>
+              <option value="biomed">Biomedical Engineering</option>
+              <option value="meta">Metallurgical Engineering</option>
+              <option value="mining">Mining Engineering</option>
+              <option value="mca">MCA / Architecture</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="applicant-year">Year of Study *</label>
+            <select id="applicant-year" class="cyber-input" required>
+              <option value="1">1st Year (Volunteer Track)</option>
+              <option value="2">2nd Year (Executive Track)</option>
+              <option value="3">3rd Year (Coordinator Track)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="applicant-domain">Preferred Domain / Wing *</label>
+          <select id="applicant-domain" class="cyber-input" required>
+            <option value="tech">Tech Team (Web, Systems, APIs)</option>
+            <option value="event">Event Management & Logistics</option>
+            <option value="vigyaan">Vigyaan Science Exhibition</option>
+            <option value="sponsorship">Sponsorship & Corporate Relations</option>
+            <option value="media">Media & Public Relations</option>
+            <option value="design">Design & Video Editing</option>
+            <option value="doc">Documentation & Institutional Records</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="applicant-skills">Why do you want to join & What skills do you bring?</label>
+          <textarea id="applicant-skills" class="cyber-input textarea" rows="3" placeholder="Tell us about your enthusiasm, past projects, or what you want to learn..."></textarea>
+        </div>
+
+        <button type="submit" class="cyber-btn btn-arcane primary-gold w-100">
+          <span class="btn-text">TRANSMIT CANDIDATURE</span>
+        </button>
+      </form>
+      
+      <div id="form-success-msg" class="form-success-msg hidden">
+        <span class="success-icon">⚡</span>
+        <h4>APPLICATION TRANSMITTED SUCCESSFULLY!</h4>
+        <p>Your record has been logged in the Technocracy candidate database. Watch your institute email for interview schedule details.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript Main Application Bundle -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+/* ============================================================
+   COMPONENTS: Header, Navigation, Realm Switcher
+   ============================================================ */
+   2. TOP HUD HEADER / NAVIGATION & REALM SWITCHER
+   ========================================================================== */
+
+.cyber-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(8, 8, 18, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--active-border);
+  transition: all var(--transition-normal);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 0 2.5rem;
+  max-width: 1520px;
+  margin: 0 auto;
+}
+
+/* Brand Logo */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand-hextech-badge {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, rgba(14, 14, 28, 0.9) 100%);
+  border: 1.5px solid var(--piltover-gold);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.4);
+}
+
+.brand-symbol {
+  font-size: 1.35rem;
+  color: var(--piltover-gold-light);
+  text-shadow: 0 0 12px var(--piltover-gold);
+}
+
+.brand-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-family: var(--font-deco);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.brand-sub {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--piltover-gold-light);
+  letter-spacing: 0.12em;
+}
+
+/* Desktop Nav */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.nav-link {
+  font-family: var(--font-arcane);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  color: var(--text-secondary);
+  position: relative;
+  padding: 0.45rem 0;
+  transition: color var(--transition-fast);
+}
+
+.nav-num {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--active-accent);
+  margin-right: 3px;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--piltover-gold-light);
+  text-shadow: 0 0 14px rgba(212, 175, 55, 0.55);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--active-accent);
+  box-shadow: 0 0 10px var(--active-accent);
+  transition: width var(--transition-fast);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.highlight-link {
+  color: var(--arcane-purple-light);
+}
+
+/* Realm Switcher Pill */
+.realm-switcher-pill {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--active-border);
+  border-radius: 50px;
+  padding: 3px;
+  gap: 3px;
+}
+
+.realm-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  font-family: var(--font-arcane);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.realm-btn:hover { color: var(--text-primary); }
+
+.realm-btn.active {
+  background: var(--active-accent);
+  color: #0b0f19;
+  box-shadow: 0 0 12px var(--active-accent);
+}
+
+/* Header Actions */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.hud-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+}
+
+.hud-icon-btn:hover {
+  background: rgba(212, 175, 55, 0.12);
+  border-color: var(--piltover-gold);
+  color: var(--piltover-gold);
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.35);
+}
+
+.terminal-btn {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--zaun-green);
+  border-color: rgba(0, 230, 138, 0.3);
+}
+
+/* Mobile Toggle */
+.mobile-toggle-btn {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  width: 34px;
+  height: 34px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger-bar {
+  width: 24px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: all var(--transition-fast);
+}
+
+/* Mobile Drawer */
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: min(85vw, 380px);
+  height: 100vh;
+  background: rgba(12, 12, 24, 0.98);
+  backdrop-filter: blur(28px);
+  border-left: 1px solid var(--active-border);
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-nav-drawer.open { right: 0; }
+
+.mobile-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.cyber-label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--active-accent);
+}
+
+.mobile-close-btn {
+  font-size: 2rem;
+  color: var(--text-secondary);
+}
+
+.mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.mob-link {
+  font-family: var(--font-arcane);
+  font-size: 1rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.mob-link span {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--active-accent);
+}
+
+.mob-link.highlight { color: var(--arcane-purple-light); }
+
+.mobile-nav-footer {
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ==========================================================================

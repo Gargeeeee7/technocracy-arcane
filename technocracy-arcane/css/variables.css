@@ -1,0 +1,102 @@
+/* ============================================================
+   VARIABLES + REALM MODES
+   ============================================================ */
+/* ==========================================================================
+   TECHNOCRACY NIT RAIPUR — SPATIAL ARCANE MAXIMALISM DESIGN SYSTEM
+   ========================================================================== */
+
+:root {
+  /* -----------------------------------------------------------------------
+     1. ARCANE CORE COLOR PALETTE
+     ----------------------------------------------------------------------- */
+  /* Base / Deep Void Backgrounds */
+  --arcane-bg-deep: #06060c;
+  --arcane-bg: #0b0b16;
+  --arcane-bg-card: rgba(18, 18, 36, 0.68);
+  --arcane-bg-card-hover: rgba(26, 26, 52, 0.84);
+  --arcane-bg-elevated: #1a1a32;
+
+  /* Piltover (Gold / Prestige / Progress) */
+  --piltover-gold: #d4af37;
+  --piltover-gold-light: #f5df9e;
+  --piltover-amber: #fbcb5b;
+  --piltover-gold-glow: rgba(212, 175, 55, 0.55);
+  --piltover-gold-dim: rgba(212, 175, 55, 0.15);
+
+  /* Zaun (Toxic / Undercity / Chemtech) */
+  --zaun-green: #00e68a;
+  --zaun-green-dark: #00b36b;
+  --zaun-teal: #00c9a7;
+  --zaun-glow: rgba(0, 230, 138, 0.55);
+  --zaun-dim: rgba(0, 230, 138, 0.15);
+
+  /* Magic / Shimmer / Accents */
+  --arcane-purple: #7b5cff;
+  --arcane-purple-light: #a78bfa;
+  --arcane-purple-glow: rgba(123, 92, 255, 0.55);
+  --arcane-cyan: #00d4ff;
+  --arcane-cyan-glow: rgba(0, 212, 255, 0.55);
+  --arcane-pink: #f472b6;
+  --arcane-red: #ef4444;
+
+  /* Text & Readability */
+  --text-primary: #f5f4ff;
+  --text-secondary: #c9c6e6;
+  --text-muted: #8b87a8;
+
+  /* Spatial & Active Accent */
+  --active-accent: var(--piltover-gold);
+  --active-accent-glow: var(--piltover-gold-glow);
+  --active-border: rgba(212, 175, 55, 0.32);
+  --specular-light: rgba(212, 175, 55, 0.15);
+
+  /* Fonts */
+  --font-arcane: 'Cinzel', serif;
+  --font-deco: 'Cinzel Decorative', serif;
+  --font-cyber: 'Orbitron', -apple-system, sans-serif;
+  --font-body: 'Poppins', 'Space Grotesk', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-normal: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-slow: 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* -----------------------------------------------------------------------
+   2. DUAL REALM STYLING (PILTOVER vs ZAUN MODES)
+   ----------------------------------------------------------------------- */
+
+body.realm-piltover {
+  --active-accent: var(--piltover-gold);
+  --active-accent-glow: var(--piltover-gold-glow);
+  --active-border: rgba(212, 175, 55, 0.32);
+  --specular-light: rgba(212, 175, 55, 0.15);
+  background: radial-gradient(circle at 50% 12%, #181832 0%, #0c0c1a 50%, #04040a 100%);
+}
+
+body.realm-zaun {
+  --active-accent: var(--zaun-green);
+  --active-accent-glow: var(--zaun-glow);
+  --active-border: rgba(0, 230, 138, 0.32);
+  --specular-light: rgba(0, 230, 138, 0.16);
+  background: radial-gradient(circle at 50% 12%, #0d221c 0%, #09131a 50%, #03080c 100%);
+}
+
+body.realm-zaun .arcane-gold-text,
+body.realm-zaun .arcane-headline-gradient {
+  background: linear-gradient(135deg, var(--zaun-green), var(--zaun-teal), var(--arcane-purple-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.realm-zaun .brand-hextech-badge {
+  border-color: var(--zaun-green);
+  box-shadow: 0 0 20px var(--zaun-glow);
+}
+
+body.realm-zaun .hextech-core {
+  background: radial-gradient(circle, #00e68a 0%, #007a48 50%, #041f14 90%);
+  box-shadow: 0 0 45px var(--zaun-green), inset 0 0 25px #ffffff;
+}
+

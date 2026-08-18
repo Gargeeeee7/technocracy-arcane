@@ -1,0 +1,104 @@
+/* ============================================================
+   KEYFRAMES + GLOBAL RESPONSIVE
+   ============================================================ */
+   KEYFRAME ANIMATIONS
+   ========================================================================== */
+
+@keyframes rotateClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotateCounter {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes pulseOut {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes mouseWheel {
+  0% { transform: translate(-50%, 0); opacity: 0; }
+  40% { opacity: 1; }
+  80% { transform: translate(-50%, 14px); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes circuitTravel {
+  0% { top: 0; }
+  100% { top: calc(100% - 80px); }
+}
+
+@keyframes floatMerch {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .hero-stats-banner { grid-template-columns: repeat(2, 1fr); }
+  .wings-grid { grid-template-columns: repeat(2, 1fr); }
+  .tech-subgrid { grid-template-columns: repeat(2, 1fr); }
+  .oc-grid { grid-template-columns: repeat(3, 1fr); }
+  .head-grid { grid-template-columns: repeat(2, 1fr); }
+  .merch-showcase-wrapper { grid-template-columns: 1fr; }
+  .footer-container { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 900px) {
+  .desktop-nav { display: none; }
+  .mobile-toggle-btn { display: flex; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-pillars-grid { grid-template-columns: 1fr; }
+  .aavartan-grid { grid-template-columns: 1fr; }
+  .vigyaan-process-grid { grid-template-columns: 1fr; }
+  .problems-grid { grid-template-columns: 1fr; }
+  .wings-grid { grid-template-columns: 1fr; }
+  .tech-subgrid { grid-template-columns: 1fr; }
+  .tech-exec-row { grid-template-columns: 1fr; }
+  .oc-grid { grid-template-columns: repeat(2, 1fr); }
+  .head-grid { grid-template-columns: 1fr; }
+  .why-join-grid { grid-template-columns: 1fr; }
+  .application-banner { flex-direction: column; text-align: center; }
+  .aavartan-callout { flex-direction: column; text-align: center; }
+  .timeline-circuit-line { left: 28px; }
+  .timeline-marker { left: 28px; }
+  .timeline-item, .timeline-item:nth-child(even), .timeline-item:nth-child(odd) {
+    justify-content: flex-start;
+    padding-left: 70px;
+  }
+  .timeline-content { width: 100%; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-container { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-bottom-flex { flex-direction: column; gap: 1rem; text-align: center; }
+  .realm-switcher-pill { margin-right: 0.2rem; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 1.2rem; }
+  .section-block { padding: 6rem 0; }
+  .hero-stats-banner { grid-template-columns: 1fr; }
+  .oc-grid { grid-template-columns: 1fr; }
+  .hero-title-core { font-size: 2.6rem; }
+  .merch-showcase-wrapper { padding: 1.8rem; }
+}

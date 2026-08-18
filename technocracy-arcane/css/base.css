@@ -1,0 +1,484 @@
+/* ============================================================
+   BASE: Reset, Ambient Background, Glass, Buttons, Utilities
+   ============================================================ */
+/* Reset & Global */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--arcane-bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  color: var(--text-primary);
+  line-height: 1.75;
+  transition: background var(--transition-slow);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* ==========================================================================
+   SPATIAL AMBIENT BACKGROUND & FLOATING ORBS
+   ========================================================================== */
+
+#cyber-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.95;
+}
+
+.spatial-ambient-orb {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.45;
+  filter: blur(140px);
+  animation: floatOrb 18s ease-in-out infinite alternate;
+}
+
+.spatial-ambient-orb.orb-1 {
+  width: 550px;
+  height: 550px;
+  top: -100px;
+  right: -100px;
+  background: radial-gradient(circle, var(--piltover-gold-glow) 0%, rgba(212, 175, 55, 0) 70%);
+}
+
+.spatial-ambient-orb.orb-2 {
+  width: 600px;
+  height: 600px;
+  bottom: 10%;
+  left: -150px;
+  background: radial-gradient(circle, var(--arcane-purple-glow) 0%, rgba(123, 92, 255, 0) 70%);
+  animation-duration: 22s;
+  animation-delay: -5s;
+}
+
+.spatial-ambient-orb.orb-3 {
+  width: 480px;
+  height: 480px;
+  top: 45%;
+  right: 15%;
+  background: radial-gradient(circle, var(--zaun-glow) 0%, rgba(0, 230, 138, 0) 70%);
+  animation-duration: 25s;
+  animation-delay: -10s;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, -80px) scale(1.15); }
+  100% { transform: translate(-40px, 60px) scale(0.9); }
+}
+
+.arcane-vignette-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 160px rgba(0, 0, 0, 0.88);
+  z-index: 2;
+}
+
+.arcane-film-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  z-index: 3;
+}
+
+.cyber-grid-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: 
+    linear-gradient(rgba(212, 175, 55, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   EXPANSIVE SPACIOUS LAYOUT CONTAINER
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.section-block {
+  padding: 9.5rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* Typography Gradient Utilities */
+.arcane-gold-text {
+  background: linear-gradient(135deg, var(--piltover-gold-light), var(--piltover-gold), var(--piltover-amber));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 24px rgba(212, 175, 55, 0.35);
+}
+
+.arcane-headline-gradient {
+  background: linear-gradient(135deg, #ffffff 15%, var(--piltover-gold-light) 45%, var(--piltover-gold) 75%, var(--arcane-purple-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 40px rgba(212, 175, 55, 0.45);
+}
+
+.text-glow-gold {
+  color: var(--piltover-gold);
+  text-shadow: 0 0 18px var(--piltover-gold-glow);
+}
+
+.text-glow-purple {
+  color: var(--arcane-purple-light);
+  text-shadow: 0 0 18px var(--arcane-purple-glow);
+}
+
+.text-glow-cyan {
+  color: var(--arcane-cyan);
+  text-shadow: 0 0 18px var(--arcane-cyan-glow);
+}
+
+.text-glow-green {
+  color: var(--zaun-green);
+  text-shadow: 0 0 18px var(--zaun-glow);
+}
+
+.header-divider-filigree {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin: 1rem 0 1.6rem;
+  color: var(--piltover-gold);
+  font-size: 1rem;
+  letter-spacing: 0.35em;
+  opacity: 0.9;
+}
+
+.header-divider-filigree::before,
+.header-divider-filigree::after {
+  content: '';
+  height: 1px;
+  width: 120px;
+  background: linear-gradient(90deg, transparent, var(--piltover-gold), transparent);
+}
+
+.w-100 { width: 100%; }
+.hidden { display: none !important; }
+
+/* ==========================================================================
+   SPATIAL 3D GLASS CARDS & DYNAMIC SPECULAR HIGHLIGHTS
+   ========================================================================== */
+
+.glass-panel {
+  background-color: var(--arcane-bg-card);
+  background-image: radial-gradient(
+    700px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    var(--specular-light),
+    transparent 50%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--active-border);
+  border-radius: 14px;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 1200px;
+}
+
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--active-accent), transparent);
+  opacity: 0.7;
+}
+
+.glass-panel:hover {
+  background-color: var(--arcane-bg-card-hover);
+  border-color: var(--active-accent);
+  box-shadow: 
+    0 22px 55px rgba(0, 0, 0, 0.65), 
+    0 0 35px var(--active-accent-glow), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Spatial Z-Layer Floating Children */
+.spatial-z-icon {
+  transform: translateZ(35px);
+  transition: transform var(--transition-normal);
+}
+
+.spatial-z-title {
+  transform: translateZ(25px);
+  transition: transform var(--transition-normal);
+}
+
+.spatial-card:hover .spatial-z-icon {
+  transform: translateZ(50px) scale(1.08);
+}
+
+.spatial-card:hover .spatial-z-title {
+  transform: translateZ(35px);
+}
+
+/* Art Deco Geometric Corner Flourishes */
+.card-deco-corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.card-deco-corner.tl {
+  top: 6px;
+  left: 6px;
+  border-top: 2px solid var(--active-accent);
+  border-left: 2px solid var(--active-accent);
+}
+
+.card-deco-corner.br {
+  bottom: 6px;
+  right: 6px;
+  border-bottom: 2px solid var(--active-accent);
+  border-right: 2px solid var(--active-accent);
+}
+
+/* Spatial Floating Runes in Hero */
+.spatial-floating-rune {
+  position: absolute;
+  font-family: var(--font-arcane);
+  font-size: 1.5rem;
+  color: var(--piltover-gold);
+  opacity: 0.35;
+  filter: drop-shadow(0 0 15px var(--piltover-gold-glow));
+  pointer-events: none;
+  animation: floatRune 6s ease-in-out infinite alternate;
+}
+
+.spatial-floating-rune.rune-left {
+  top: 30%;
+  left: 5%;
+}
+
+.spatial-floating-rune.rune-right {
+  top: 40%;
+  right: 5%;
+  animation-delay: -3s;
+}
+
+@keyframes floatRune {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-25px) rotate(4deg); }
+}
+
+/* ==========================================================================
+   ARCANE BUTTONS (.btn-arcane with Sweep Shine & Spatial Glow)
+   ========================================================================== */
+
+.cyber-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  font-family: var(--font-arcane);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-fast);
+  z-index: 10;
+}
+
+.btn-arcane {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-arcane::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(245, 223, 158, 0.4),
+    rgba(123, 92, 255, 0.45),
+    transparent
+  );
+  transform: translateX(-120%);
+  transition: transform 0.65s ease;
+}
+
+.btn-arcane:hover::before {
+  transform: translateX(120%);
+}
+
+.btn-arcane.primary-gold {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(184, 134, 11, 0.55));
+  border: 1.5px solid var(--piltover-gold);
+  color: #ffffff;
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.45), inset 0 0 12px rgba(212, 175, 55, 0.25);
+}
+
+.btn-arcane.primary-gold:hover {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.5), rgba(184, 134, 11, 0.75));
+  box-shadow: 0 0 45px rgba(212, 175, 55, 0.8), inset 0 0 18px rgba(212, 175, 55, 0.5);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.btn-arcane.primary-purple {
+  background: linear-gradient(135deg, rgba(123, 92, 255, 0.3), rgba(167, 139, 250, 0.5));
+  border: 1.5px solid var(--arcane-purple);
+  color: #ffffff;
+  box-shadow: 0 0 24px rgba(123, 92, 255, 0.45);
+}
+
+.btn-arcane.primary-purple:hover {
+  background: linear-gradient(135deg, rgba(123, 92, 255, 0.5), rgba(167, 139, 250, 0.75));
+  box-shadow: 0 0 45px rgba(123, 92, 255, 0.85);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.btn-arcane.secondary-ghost {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(245, 223, 158, 0.45);
+  color: var(--piltover-gold-light);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.15);
+}
+
+.btn-arcane.secondary-ghost:hover {
+  background: rgba(212, 175, 55, 0.18);
+  border-color: var(--piltover-gold);
+  color: #ffffff;
+  box-shadow: 0 0 22px rgba(212, 175, 55, 0.35);
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   JINX GRAFFITI EASTER EGG OVERLAY
+   ========================================================================== */
+
+.jinx-graffiti-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  pointer-events: auto;
+  background: rgba(10, 5, 20, 0.78);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: jinxFlash 0.4s ease;
+}
+
+.jinx-scribble {
+  font-family: var(--font-cyber);
+  font-weight: 900;
+  text-shadow: 0 0 20px #ff0055, 0 0 40px #00f0ff;
+  color: #ff0055;
+  letter-spacing: 0.15em;
+  margin: 0.8rem 0;
+  animation: jinxShake 0.3s infinite ease-in-out alternate;
+}
+
+.jinx-scribble.text-1 {
+  font-size: clamp(2rem, 6vw, 4.8rem);
+  transform: rotate(-6deg);
+  color: #00f0ff;
+}
+
+.jinx-scribble.text-2 {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  transform: rotate(5deg);
+  color: #ff0055;
+}
+
+.jinx-scribble.text-3 {
+  font-size: clamp(1.4rem, 4vw, 3rem);
+  transform: rotate(-3deg);
+  color: #ffd700;
+}
+
+.jinx-monkey-face {
+  font-size: 5.5rem;
+  margin: 1.5rem 0;
+  animation: pulseOut 1s infinite alternate;
+}
+
+.jinx-dismiss-btn {
+  margin-top: 1.8rem;
+  padding: 0.9rem 1.8rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  background: #ff0055;
+  color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 0 25px #ff0055;
+  transition: all var(--transition-fast);
+}
+
+.jinx-dismiss-btn:hover {
+  transform: scale(1.1);
+  background: #00f0ff;
+  color: #000000;
+  box-shadow: 0 0 35px #00f0ff;
+}
+
+@keyframes jinxShake {
+  0% { transform: translate(-2px, 2px) rotate(-4deg); }
+  100% { transform: translate(2px, -2px) rotate(4deg); }
+}
+
+@keyframes jinxFlash {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* ==========================================================================
