@@ -29,18 +29,25 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(3,3,8,0.4) 0%, rgba(3,3,8,0.6) 45%, rgba(3,3,8,0.85) 100%),
+    /* Lighter overlay so the city shows more */
+    linear-gradient(180deg, 
+      rgba(3, 3, 8, 0.15) 0%, 
+      rgba(3, 3, 8, 0.35) 40%, 
+      rgba(3, 3, 8, 0.65) 100%),
     url(/assets/arcane-bg.jpg) center center / cover no-repeat;
   z-index: 1;
+  /* Extra brightness boost */
+  filter: brightness(1.25) contrast(1.08) saturate(1.15);
 }
 
+/* Soften the heavy vignette so it doesn’t darken everything */
 .intro-vignette {
   position: absolute;
   inset: 0;
-  box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.35);  /* was 120px / 0.6 */
   pointer-events: none;
   z-index: 2;
-}
+} 
 
 .intro-grid-lines {
   position: absolute;
@@ -78,19 +85,19 @@
   position: relative;
   z-index: 10;
   width: 100%;
-  max-width: 1200px;
+  max-width: none;                 /* remove 1200px limit */
   height: 100vh;
   height: 100dvh;
-  padding: 3.5rem 1.5rem 1.2rem;
+  padding: 3.5rem 0 1.2rem;       /* remove side padding */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;            /* stretch instead of center */
   text-align: center;
   gap: 0.5rem;
   box-sizing: border-box;
-  overflow: hidden;
-  margin: 0 auto;
+  overflow: visible;               /* allow title to fully show */
+  margin: 0;
 }
 
 /* Top bar pinned */
@@ -105,11 +112,10 @@
   flex-wrap: wrap;
   gap: 0.9rem;
   width: 100%;
-  max-width: 1000px;
-  padding: 0 1rem;
+  max-width: 1100px;
+  padding: 0 1.5rem;
   text-align: center;
   z-index: 20;
-  border-bottom: none;
 }
 
 .intro-institute-badge {
@@ -155,33 +161,31 @@
 /* ---- Main stage: cards left, center content ---- */
 .intro-main-stage {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 2rem;
+  grid-template-columns: 240px 1fr;   /* fixed left column */
+  gap: 0;
   align-items: center;
   width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  max-width: none;
+  margin: 0;
+  padding: 0 1.5rem 0 1.25rem;      /* small left padding only */
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .hud-left-stack {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.7rem;
   align-items: stretch;
   max-height: calc(100vh - 5.5rem);
+  justify-self: start;
+  margin-left: 0;
 }
 
 .hud-left-stack .spatial-hud-card {
   width: 100%;
-  max-width: 200px;
-  padding: 0.65rem 0.8rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  background: rgba(14, 14, 28, 0.78);
-  border: 1px solid rgba(212, 175, 55, 0.22);
-  position: relative;
+  max-width: 230px;
+  padding: 0.7rem 0.85rem;
 }
 
 .hud-left-stack .hud-card-header {
@@ -338,23 +342,23 @@
   justify-content: center;
   text-align: center;
   width: 100%;
-  gap: 0.4rem;
+  height: 100%;
+  gap: 1.4rem;
+  padding-right: 1rem;              /* keep a little breathing room on right */
 }
 
 .gyro-reactor-stage {
   position: relative;
-  width: min(260px, 50vw);
-  height: min(260px, 50vw);
-  margin: 0.2rem 0 0.5rem;
+  width: min(400px, 38vw);
+  height: min(400px, 38vw);
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transform-style: preserve-3d;
-  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
   flex-shrink: 0;
 }
-
 .gyro-ring {
   position: absolute;
   inset: 0;
@@ -429,8 +433,8 @@
 
 .gyro-core-hub {
   position: relative;
-  width: 95px;
-  height: 95px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -531,22 +535,27 @@
 
 /* Title */
 .intro-headline-wrapper {
-  margin: 0.2rem 0 0;
+  margin: 0.8rem 0 0;
   text-align: center;
   width: 100%;
+  overflow: visible;
 }
 
 .intro-grand-title {
   margin: 0;
   text-align: center;
+  overflow: visible;
 }
 
 .intro-grand-title .title-brand {
   font-family: var(--font-deco);
-  font-size: clamp(2.6rem, 6.5vw, 4.8rem);
+  font-size: clamp(3.6rem, 8.5vw, 6.8rem);
   font-weight: 900;
-  letter-spacing: 0.04em;
-  line-height: 1.05;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  display: inline-block;            /* prevents clipping */
+  padding: 0 0.15em;                /* tiny side padding so Y isn’t cut */
+  text-shadow: 0 0 45px rgba(212, 175, 55, 0.5);
 }
 
 /* Hide removed UI */
@@ -570,7 +579,8 @@
 @media (max-width: 900px) {
   .intro-main-stage {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    padding: 0 1rem;
+    gap: 1.2rem;
   }
   .hud-left-stack {
     flex-direction: row;
@@ -579,22 +589,154 @@
     flex-wrap: wrap;
   }
   .hud-left-stack .spatial-hud-card {
-    max-width: 180px;
+    max-width: 200px;
   }
   .gyro-reactor-stage {
-    width: min(220px, 55vw);
-    height: min(220px, 55vw);
+    width: min(320px, 72vw);
+    height: min(320px, 72vw);
   }
   .intro-grand-title .title-brand {
-    font-size: clamp(2rem, 9vw, 3.2rem);
+    font-size: clamp(2.8rem, 11vw, 4.5rem);
   }
 }
 
 @media (max-width: 560px) {
   .hud-left-stack {
-    display: none; /* hide cards on very small screens for clean mobile */
+    display: none;
   }
   .intro-main-stage {
     grid-template-columns: 1fr;
+    padding: 0 0.8rem;
   }
+}
+/* ============================================================
+   ARCANE ENERGY SWISH TRANSITION
+   ============================================================ */
+.arcane-swish {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.arcane-swish.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Main energy blade */
+.swish-blade {
+  position: absolute;
+  top: -10%;
+  left: -20%;
+  width: 140%;
+  height: 120%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 35%,
+    rgba(0, 212, 255, 0.15) 42%,
+    rgba(212, 175, 55, 0.85) 48%,
+    rgba(245, 223, 158, 1) 50%,
+    rgba(212, 175, 55, 0.85) 52%,
+    rgba(123, 92, 255, 0.25) 58%,
+    transparent 65%,
+    transparent 100%
+  );
+  transform: translateX(-120%) skewX(-18deg);
+  filter: blur(1px);
+}
+
+.arcane-swish.active .swish-blade {
+  animation: arcaneSwishBlade 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Soft glowing trail behind the blade */
+.swish-trail {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 80% 50% at 50% 50%,
+    rgba(212, 175, 55, 0.25) 0%,
+    rgba(0, 212, 255, 0.12) 40%,
+    transparent 70%
+  );
+  opacity: 0;
+  transform: scale(0.6);
+}
+
+.arcane-swish.active .swish-trail {
+  animation: arcaneSwishTrail 0.9s ease-out forwards;
+}
+
+/* Tiny particle sparkles */
+.swish-particles {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, #f5df9e 1px, transparent 1px),
+    radial-gradient(circle at 70% 60%, #00d4ff 1.5px, transparent 1.5px),
+    radial-gradient(circle at 40% 80%, #a78bfa 1px, transparent 1px),
+    radial-gradient(circle at 85% 25%, #d4af37 1px, transparent 1px);
+  background-size: 180px 180px, 220px 220px, 160px 160px, 200px 200px;
+  opacity: 0;
+}
+
+.arcane-swish.active .swish-particles {
+  animation: arcaneSwishParticles 0.8s ease-out forwards;
+}
+
+@keyframes arcaneSwishBlade {
+  0% {
+    transform: translateX(-120%) skewX(-18deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120%) skewX(-18deg);
+    opacity: 0.9;
+  }
+}
+
+@keyframes arcaneSwishTrail {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  40% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+}
+
+@keyframes arcaneSwishParticles {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateX(-30px);
+  }
+  30% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2) translateX(40px);
+  }
+}
+
+/* Make the existing fade a bit faster so the swish feels snappy */
+.intro-screen.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.08) translateZ(60px);
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.25s,
+              visibility 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.25s,
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
 }

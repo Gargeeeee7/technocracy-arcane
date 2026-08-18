@@ -487,26 +487,37 @@
   const btnReplayIntro = document.getElementById('btn-replay-intro');
 
   function triggerEnterPortal() {
-    sound.playHextechChord();
+  sound.playHextechChord();
 
-    // Trigger Hyper Shockwave Flash
-    if (shockwaveBurst) {
-      shockwaveBurst.classList.add('active');
-    }
+  // 1. Fire the Arcane Swish
+  const swish = document.getElementById('arcane-swish');
+  if (swish) {
+    swish.classList.add('active');
+  }
 
-    // Explode 60 spatial particles from center
-    for (let i = 0; i < 60; i++) {
-      particles.push(new SpatialArcaneParticle(width / 2, height / 2, 5));
-    }
+  // 2. Original shockwave flash (still looks good together)
+  if (shockwaveBurst) {
+    shockwaveBurst.classList.add('active');
+  }
 
+  // 3. Extra particles
+  for (let i = 0; i < 60; i++) {
+    particles.push(new SpatialArcaneParticle(width / 2, height / 2, 5));
+  }
+
+  // 4. Start the fade after the blade has started moving
+  setTimeout(() => {
     introScreen.classList.add('fade-out');
     mainApp.classList.remove('hidden');
+  }, 180);
 
-    setTimeout(() => {
-      introScreen.classList.add('hidden');
-      if (shockwaveBurst) shockwaveBurst.classList.remove('active');
-    }, 850);
-  }
+  // 5. Cleanup
+  setTimeout(() => {
+    introScreen.classList.add('hidden');
+    if (shockwaveBurst) shockwaveBurst.classList.remove('active');
+    if (swish) swish.classList.remove('active');
+  }, 950);
+}
 
   if (btnEnterMatrix) btnEnterMatrix.addEventListener('click', triggerEnterPortal);
   if (hexCoreHub) hexCoreHub.addEventListener('click', triggerEnterPortal);
@@ -627,6 +638,20 @@
       mobileNavDrawer.classList.remove('open');
     });
   });
+
+const navToggle = document.getElementById('nav-dropdown-toggle');
+const navWrapper = document.querySelector('.nav-dropdown-wrapper');
+
+if (navToggle && navWrapper) {
+  navToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navWrapper.classList.toggle('open');
+  });
+
+  document.addEventListener('click', () => {
+    navWrapper.classList.remove('open');
+  });
+}
 
   document.querySelectorAll('button, .nav-link, .cyber-btn, .color-btn, .size-btn').forEach((elem) => {
     elem.addEventListener('mouseenter', () => sound.playHover());

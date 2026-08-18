@@ -50,6 +50,12 @@
 
     <!-- Shockwave Flash Overlay (Triggered on Ignite) -->
     <div id="intro-shockwave-burst" class="intro-shockwave-burst"></div>
+    <!-- Arcane Energy Swish Overlay -->
+<div id="arcane-swish" class="arcane-swish">
+  <div class="swish-blade"></div>
+  <div class="swish-trail"></div>
+  <div class="swish-particles"></div>
+</div>
 
     <div class="intro-container">
       
@@ -209,95 +215,65 @@
   <div id="main-app" class="main-app hidden">
     
     <!-- Top HUD Navigation Bar (Spatial Glass Header) -->
-    <header class="cyber-header" id="header">
-      <div class="header-container">
-        
-        <!-- Brand Logo with Arcane Hextech Gem -->
-        <a href="#hero" class="brand-logo" id="brand-logo">
-          <div class="brand-hextech-badge">
-            <div class="hex-gem-shape"></div>
-            <span class="brand-symbol">⚡</span>
-          </div>
-          <div class="brand-info">
-            <span class="brand-title arcane-gold-text">TECHNOCRACY</span>
-            <span class="brand-sub">NIT RAIPUR • ESTD. 2007</span>
-          </div>
-        </a>
+<header class="cyber-header" id="header">
+  <div class="header-container">
 
-        <!-- Desktop Navigation Links -->
-        <nav class="desktop-nav" id="desktop-nav">
-          <a href="#about" class="nav-link"><span class="nav-num">01.</span> About</a>
-          <a href="#history" class="nav-link"><span class="nav-num">02.</span> Chronicles</a>
-          <a href="#aavartan" class="nav-link"><span class="nav-num">03.</span> Aavartan</a>
-          <a href="#vigyaan" class="nav-link"><span class="nav-num">04.</span> Vigyaan</a>
-          <a href="#domains" class="nav-link"><span class="nav-num">05.</span> Domains</a>
-          <a href="#tech-team" class="nav-link"><span class="nav-num">06.</span> Tech Team</a>
-          <a href="#leadership" class="nav-link"><span class="nav-num">07.</span> Council</a>
-          <a href="#merch" class="nav-link"><span class="nav-num">08.</span> Merch</a>
-          <a href="#recruitment" class="nav-link highlight-link"><span class="nav-num">09.</span> Join Us</a>
-        </nav>
+    <!-- Logo flush left -->
+    <a href="#hero" class="brand-logo" id="brand-logo">
+      <img src="assets/tcp-logo.webp" alt="Technocracy Logo" class="tcp-logo-img">
+      <span class="brand-title arcane-gold-text">TECHNOCRACY</span>
+    </a>
 
-        <!-- Right Quick Controls & Realm Switcher -->
-        <div class="header-actions">
-          
-          <!-- ARCANE REALM SWITCHER: PILTOVER (TOPSIDE GOLD) vs ZAUN (UNDERCITY GREEN) -->
-          <div class="realm-switcher-pill" id="realm-switcher" title="Toggle Arcane Realm: Piltover (Hextech Gold) / Zaun (Chemtech Toxic Green & Shimmer)">
-            <button class="realm-btn active" id="btn-realm-piltover" data-realm="piltover">
-              <span class="realm-icon">⚙️</span>
-              <span class="realm-name">PILTOVER</span>
-            </button>
-            <button class="realm-btn" id="btn-realm-zaun" data-realm="zaun">
-              <span class="realm-icon">🧪</span>
-              <span class="realm-name">ZAUN</span>
-            </button>
-          </div>
+    <!-- Dropdown Navigation -->
+    <div class="nav-dropdown-wrapper">
+      <button class="nav-dropdown-toggle" id="nav-dropdown-toggle">
+        <span>NAVIGATION</span>
+        <span class="dropdown-chevron">▾</span>
+      </button>
+      <nav class="nav-dropdown-menu" id="nav-dropdown-menu">
+        <a href="#about" class="nav-link"><span class="nav-num">01.</span> About</a>
+        <a href="#history" class="nav-link"><span class="nav-num">02.</span> Chronicles</a>
+        <a href="#aavartan" class="nav-link"><span class="nav-num">03.</span> Aavartan</a>
+        <a href="#vigyaan" class="nav-link"><span class="nav-num">04.</span> Vigyaan</a>
+        <a href="#domains" class="nav-link"><span class="nav-num">05.</span> Domains</a>
+        <a href="#tech-team" class="nav-link"><span class="nav-num">06.</span> Tech Team</a>
+        <a href="#leadership" class="nav-link"><span class="nav-num">07.</span> Council</a>
+        <a href="#merch" class="nav-link"><span class="nav-num">08.</span> Merch</a>
+        <a href="#recruitment" class="nav-link highlight-link"><span class="nav-num">09.</span> Join Us</a>
+      </nav>
+    </div>
 
-          <!-- Web Audio Synth Mute/Unmute Toggle -->
-          <button id="btn-audio-toggle" class="hud-icon-btn" title="Toggle Arcane Hextech Soundscape">
-            <span class="audio-state-icon" id="audio-icon">🔊</span>
-          </button>
-
-          <!-- Terminal Launcher -->
-          <button id="btn-terminal-trigger" class="hud-icon-btn terminal-btn" title="Open Interactive Arcane Matrix Terminal (Try typing 'jinx', 'shimmer', 'vi')">
-            <span class="terminal-prompt">&gt;_</span>
-          </button>
-
-          <!-- Replay Intro Portal -->
-          <button id="btn-replay-intro" class="hud-icon-btn" title="Replay Cinematic Arcane Intro Portal">
-            <span>🌀</span>
-          </button>
-
-          <!-- Mobile Menu Hamburger -->
-          <button id="mobile-menu-toggle" class="mobile-toggle-btn" aria-label="Toggle navigation">
-            <span class="hamburger-bar"></span>
-            <span class="hamburger-bar"></span>
-            <span class="hamburger-bar"></span>
-          </button>
-        </div>
+    <!-- Right controls -->
+    <div class="header-actions">
+      <div class="realm-switcher-pill" id="realm-switcher">
+        <button class="realm-btn active" id="btn-realm-piltover" data-realm="piltover">
+          <span class="realm-icon">⚙️</span>
+          <span class="realm-name">PILTOVER</span>
+        </button>
+        <button class="realm-btn" id="btn-realm-zaun" data-realm="zaun">
+          <span class="realm-icon">🧪</span>
+          <span class="realm-name">ZAUN</span>
+        </button>
       </div>
 
-      <!-- Mobile Navigation Drawer -->
-      <div class="mobile-nav-drawer" id="mobile-nav-drawer">
-        <div class="mobile-nav-header">
-          <span class="cyber-label">// ARCANE SYSTEM NAVIGATION</span>
-          <button id="mobile-menu-close" class="mobile-close-btn">&times;</button>
-        </div>
-        <div class="mobile-links">
-          <a href="#about" class="mob-link"><span>01.</span> About Technocracy</a>
-          <a href="#history" class="mob-link"><span>02.</span> Chronicles & Legacy (2007-2026)</a>
-          <a href="#aavartan" class="mob-link"><span>03.</span> Aavartan Tech Fest</a>
-          <a href="#vigyaan" class="mob-link"><span>04.</span> Vigyaan (10 Disciplines)</a>
-          <a href="#domains" class="mob-link"><span>05.</span> 7 Functional Domains</a>
-          <a href="#tech-team" class="mob-link"><span>06.</span> Tech Team Spotlight</a>
-          <a href="#leadership" class="mob-link"><span>07.</span> High Council Leadership</a>
-          <a href="#merch" class="mob-link"><span>08.</span> Official Merchandise (₹350)</a>
-          <a href="#recruitment" class="mob-link highlight"><span>09.</span> Induction & Join Us</a>
-        </div>
-        <div class="mobile-nav-footer">
-          <button class="cyber-btn btn-arcane primary-gold w-100" id="mob-terminal-btn">Open Arcane Terminal</button>
-        </div>
-      </div>
-    </header>
+      <button id="btn-audio-toggle" class="hud-icon-btn" title="Toggle Sound">
+        <span class="audio-state-icon" id="audio-icon">🔊</span>
+      </button>
+      <button id="btn-terminal-trigger" class="hud-icon-btn terminal-btn" title="Open Terminal">
+        <span class="terminal-prompt">&gt;_</span>
+      </button>
+      <button id="btn-replay-intro" class="hud-icon-btn" title="Replay Intro">
+        <span>🌀</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Official Technical Committee line – centered below header -->
+  <div class="header-sub-bar">
+    <span class="pulse-dot"></span>
+    <span>NATIONAL INSTITUTE OF TECHNOLOGY RAIPUR • OFFICIAL TECHNICAL COMMITTEE</span>
+  </div>
+</header>
 
     <!-- MAIN SCROLLABLE CONTENT -->
     <main class="page-main">
@@ -306,28 +282,24 @@
       <!-- 3. HERO SECTION (SPATIAL MAXIMALIST COMPOSITION) -->
       <!-- ========================================================================= -->
       <section id="hero" class="hero-section">
-        <div class="hero-bg-runes"></div>
-        
-        <!-- Spatial Floating Decorative Glyphs -->
-        <div class="spatial-floating-rune rune-left" data-speed="0.2">᚛ ᚠ ᚢ ᚦ ᚜</div>
-        <div class="spatial-floating-rune rune-right" data-speed="-0.2">✦ ⚙ ✦</div>
+  <div class="hero-bg-runes"></div>
+  
+  <div class="container hero-container">
+    
+    <!-- Removed the old hud-badge and "FORGING..." line -->
 
-        <div class="container hero-container">
-          
-          <div class="hero-hud-badge">
-            <span class="pulse-dot"></span>
-            <span class="hud-text">NATIONAL INSTITUTE OF TECHNOLOGY RAIPUR • OFFICIAL TECHNICAL COMMITTEE</span>
-          </div>
+    <h1 class="hero-title">
+      <span class="hero-title-line1">TEAM</span>
+      <span class="hero-title-line2 arcane-headline-gradient">TECHNOCRACY</span>
+    </h1>
 
-          <h1 class="hero-title">
-            <span class="hero-title-prefix">FORGING THE IMPOSSIBLE THROUGH HEXTECH & CODE</span>
-            <span class="hero-title-core arcane-headline-gradient">TEAM TECHNOCRACY</span>
-            <span class="hero-title-suffix">INNOVATION • ALCHEMY • ENGINEERING</span>
-          </h1>
+    <p class="hero-tagline">INNOVATION • ALCHEMY • ENGINEERING</p>
 
-          <p class="hero-description">
-            Established in 2007, Technocracy is the heartbeat of innovation at NIT Raipur. We build real-world software, foster cross-disciplinary research across 10 engineering domains, and orchestrate <strong>Aavartan</strong> — Central India's Largest Annual Technical Festival.
-          </p>
+    <p class="hero-description">
+      Established in 2007, Technocracy is the heartbeat of innovation at NIT Raipur. We build real-world software, foster cross-disciplinary research across 10 engineering domains, and orchestrate <strong>Aavartan</strong> — Central India's Largest Annual Technical Festival.
+    </p>
+
+    <!-- keep the CTA buttons as they are -->
 
           <!-- Core Call-to-Actions -->
           <div class="hero-cta-grid">

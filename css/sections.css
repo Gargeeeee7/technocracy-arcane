@@ -1,95 +1,56 @@
-/* ============================================================
-   SECTIONS: Hero, About, History, Aavartan, Vigyaan, etc.
-   ============================================================ */
-   3. HERO SECTION (SPATIAL MAXIMALIST COMPOSITION)
-   ========================================================================== */
-
 .hero-section {
   position: relative;
   min-height: 100vh;
-  padding-top: 140px;
-  padding-bottom: 80px;
+  padding-top: 160px;          /* more space under header */
+  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  overflow: hidden;
-}
-
-.hero-container {
-  position: relative;
-  z-index: 10;
-}
-
-.hero-hud-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.7rem;
-  padding: 0.5rem 1.4rem;
-  background: rgba(212, 175, 55, 0.08);
-  border: 1.5px solid var(--piltover-gold);
-  border-radius: 50px;
-  margin-bottom: 2rem;
-}
-
-.pulse-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--active-accent);
-  box-shadow: 0 0 12px var(--active-accent);
-  animation: blink 1.5s infinite;
-}
-
-.hud-text {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--piltover-gold-light);
-  letter-spacing: 0.12em;
-  font-weight: 600;
 }
 
 .hero-title {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 2.2rem;
+  align-items: center;
+  gap: 0.15rem;
+  margin-bottom: 1.8rem;
 }
 
-.hero-title-prefix {
-  font-family: var(--font-arcane);
-  font-size: clamp(1rem, 2.2vw, 1.4rem);
-  font-weight: 600;
-  letter-spacing: 0.28em;
-  color: var(--text-secondary);
-}
-
-.hero-title-core {
+.hero-title-line1 {
   font-family: var(--font-deco);
-  font-size: clamp(3.2rem, 8.5vw, 6.4rem);
+  font-size: clamp(2.8rem, 7vw, 5.2rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--text-secondary);
+  line-height: 1;
+}
+
+.hero-title-line2 {
+  font-family: var(--font-deco);
+  font-size: clamp(3.8rem, 9.5vw, 7.2rem);
   font-weight: 900;
   letter-spacing: 0.04em;
-  line-height: 1.05;
+  line-height: 1;
 }
 
-.hero-title-suffix {
+.hero-tagline {
   font-family: var(--font-arcane);
-  font-size: clamp(0.95rem, 1.8vw, 1.3rem);
-  font-weight: 700;
-  letter-spacing: 0.28em;
+  font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+  font-weight: 600;
+  letter-spacing: 0.32em;
   color: var(--piltover-gold-light);
-  margin-top: 0.4rem;
+  margin-bottom: 2.8rem;
 }
 
 .hero-description {
-  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-size: clamp(1.05rem, 1.9vw, 1.25rem);
   color: var(--text-secondary);
-  max-width: 920px;
-  margin: 0 auto 3rem;
-  line-height: 1.8;
+  max-width: 780px;
+  margin: 0 auto 3.5rem;
+  line-height: 1.85;
 }
-
 .hero-description strong { color: #ffffff; }
 
 .hero-cta-grid {
