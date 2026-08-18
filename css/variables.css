@@ -72,6 +72,7 @@ body.realm-piltover {
   --active-accent-glow: var(--piltover-gold-glow);
   --active-border: rgba(212, 175, 55, 0.32);
   --specular-light: rgba(212, 175, 55, 0.15);
+  --theme-bg-image: url('../assets/bg-piltover.jpeg');
   background: radial-gradient(circle at 50% 12%, #181832 0%, #0c0c1a 50%, #04040a 100%);
 }
 
@@ -80,6 +81,7 @@ body.realm-zaun {
   --active-accent-glow: var(--zaun-glow);
   --active-border: rgba(0, 230, 138, 0.32);
   --specular-light: rgba(0, 230, 138, 0.16);
+  --theme-bg-image: url('../assets/bg-zaun.jpeg');
   background: radial-gradient(circle at 50% 12%, #0d221c 0%, #09131a 50%, #03080c 100%);
 }
 
@@ -100,3 +102,40 @@ body.realm-zaun .hextech-core {
   box-shadow: 0 0 45px var(--zaun-green), inset 0 0 25px #ffffff;
 }
 
+/* ==========================================================================
+   CUSTOM ARCANE CURSORS (theme-aware) – smaller size
+   ========================================================================== */
+
+/* Piltover = Jinx gun (48px) */
+body.realm-piltover,
+body.realm-piltover * {
+  cursor: url('../assets/cursors/jinx-cursor-32.png') 0 0, auto;
+}
+
+body.realm-piltover a,
+body.realm-piltover button,
+body.realm-piltover [role="button"],
+body.realm-piltover .nav-link,
+body.realm-piltover .cyber-btn,
+body.realm-piltover .realm-btn,
+body.realm-piltover .hud-icon-btn,
+body.realm-piltover .nav-dropdown-toggle {
+  cursor: url('../assets/cursors/jinx-pointer-32.png') 0 0, pointer;
+}
+
+/* Zaun = Ekko hoverboard (48px) */
+body.realm-zaun,
+body.realm-zaun * {
+  cursor: url('../assets/cursors/ekko-cursor-32.png') 0 0, auto;
+}
+
+body.realm-zaun a,
+body.realm-zaun button,
+body.realm-zaun [role="button"],
+body.realm-zaun .nav-link,
+body.realm-zaun .cyber-btn,
+body.realm-zaun .realm-btn,
+body.realm-zaun .hud-icon-btn,
+body.realm-zaun .nav-dropdown-toggle {
+  cursor: url('../assets/cursors/ekko-pointer-32.png') 0 0, pointer;
+}

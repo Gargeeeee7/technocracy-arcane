@@ -1,3 +1,59 @@
+/* Theme background images */
+.theme-bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: var(--theme-bg-image);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transition: opacity 0.6s ease, filter 0.6s ease;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.theme-bg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 6, 12, 0.55) 0%,
+    rgba(6, 6, 12, 0.35) 40%,
+    rgba(6, 6, 12, 0.75) 100%
+  );
+  pointer-events: none;
+}
+
+body.realm-piltover .theme-bg-layer {
+  filter: saturate(1.1) brightness(0.9);
+}
+
+body.realm-zaun .theme-bg-layer {
+  filter: saturate(1.15) hue-rotate(-5deg) brightness(0.85);
+}
+
+/* Sections blur over the background while scrolling */
+.section-block {
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(8, 8, 18, 0.45);
+  transition: backdrop-filter 0.4s ease, background 0.4s ease;
+}
+
+.section-block.is-blurred {
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  background: rgba(8, 8, 18, 0.6);
+}
+
+.hero-section {
+  background: transparent;
+  backdrop-filter: none;
+}
 .hero-section {
   position: relative;
   min-height: 100vh;

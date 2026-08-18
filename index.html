@@ -216,35 +216,36 @@
     
     <!-- Top HUD Navigation Bar (Spatial Glass Header) -->
 <header class="cyber-header" id="header">
+  <!-- Theme horizontal background images (Piltover / Zaun) -->
+<div class="theme-bg-layer" aria-hidden="true"></div>
+<div class="theme-bg-overlay" aria-hidden="true"></div>
   <div class="header-container">
 
-    <!-- Logo flush left -->
+    <!-- Logo left -->
     <a href="#hero" class="brand-logo" id="brand-logo">
       <img src="assets/tcp-logo.webp" alt="Technocracy Logo" class="tcp-logo-img">
-      <span class="brand-title arcane-gold-text">TECHNOCRACY</span>
     </a>
 
-    <!-- Dropdown Navigation -->
-    <div class="nav-dropdown-wrapper">
-      <button class="nav-dropdown-toggle" id="nav-dropdown-toggle">
-        <span>NAVIGATION</span>
-        <span class="dropdown-chevron">▾</span>
-      </button>
-      <nav class="nav-dropdown-menu" id="nav-dropdown-menu">
-        <a href="#about" class="nav-link"><span class="nav-num">01.</span> About</a>
-        <a href="#history" class="nav-link"><span class="nav-num">02.</span> Chronicles</a>
-        <a href="#aavartan" class="nav-link"><span class="nav-num">03.</span> Aavartan</a>
-        <a href="#vigyaan" class="nav-link"><span class="nav-num">04.</span> Vigyaan</a>
-        <a href="#domains" class="nav-link"><span class="nav-num">05.</span> Domains</a>
-        <a href="#tech-team" class="nav-link"><span class="nav-num">06.</span> Tech Team</a>
-        <a href="#leadership" class="nav-link"><span class="nav-num">07.</span> Council</a>
-        <a href="#merch" class="nav-link"><span class="nav-num">08.</span> Merch</a>
-        <a href="#recruitment" class="nav-link highlight-link"><span class="nav-num">09.</span> Join Us</a>
-      </nav>
-    </div>
-
-    <!-- Right controls -->
+    <!-- All controls on the right -->
     <div class="header-actions">
+      <div class="nav-dropdown-wrapper">
+        <button class="nav-dropdown-toggle" id="nav-dropdown-toggle">
+          <span>NAVIGATION</span>
+          <span class="dropdown-chevron">▾</span>
+        </button>
+        <nav class="nav-dropdown-menu" id="nav-dropdown-menu">
+          <a href="#about" class="nav-link"><span class="nav-num">01.</span> About</a>
+          <a href="#history" class="nav-link"><span class="nav-num">02.</span> Chronicles</a>
+          <a href="#aavartan" class="nav-link"><span class="nav-num">03.</span> Aavartan</a>
+          <a href="#vigyaan" class="nav-link"><span class="nav-num">04.</span> Vigyaan</a>
+          <a href="#domains" class="nav-link"><span class="nav-num">05.</span> Domains</a>
+          <a href="#tech-team" class="nav-link"><span class="nav-num">06.</span> Tech Team</a>
+          <a href="#leadership" class="nav-link"><span class="nav-num">07.</span> Council</a>
+          <a href="#merch" class="nav-link"><span class="nav-num">08.</span> Merch</a>
+          <a href="#recruitment" class="nav-link highlight-link"><span class="nav-num">09.</span> Join Us</a>
+        </nav>
+      </div>
+
       <div class="realm-switcher-pill" id="realm-switcher">
         <button class="realm-btn active" id="btn-realm-piltover" data-realm="piltover">
           <span class="realm-icon">⚙️</span>
@@ -266,9 +267,10 @@
         <span>🌀</span>
       </button>
     </div>
-  </div>
 
-  <!-- Official Technical Committee line – centered below header -->
+  </div>   <!-- ← THIS closing tag was missing -->
+
+  <!-- Institute line – now correctly BELOW the header -->
   <div class="header-sub-bar">
     <span class="pulse-dot"></span>
     <span>NATIONAL INSTITUTE OF TECHNOLOGY RAIPUR • OFFICIAL TECHNICAL COMMITTEE</span>

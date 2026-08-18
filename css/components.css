@@ -15,10 +15,20 @@
   align-items: center;
   justify-content: space-between;
   height: 72px;
-  padding: 0 1.5rem;          /* no large side padding */
-  max-width: none;            /* full width */
+  padding: 0 1.5rem;
+  max-width: none;
   margin: 0;
   width: 100%;
+  gap: 1rem;
+}
+
+.header-container .brand-logo {
+  flex-shrink: 0;
+}
+
+.header-container .header-actions {
+  margin-left: auto;   /* forces NAV + buttons to the far right */
+  flex-shrink: 0;
 }
 
 /* Brand Logo */
@@ -32,7 +42,18 @@
 .tcp-logo-img {
   height: 42px;
   width: auto;
-  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.45));
+  /* Theme-aware glow: gold in Piltover, green in Zaun */
+  filter: drop-shadow(0 0 8px var(--active-accent-glow));
+  transition: filter 0.35s ease;
+}
+
+/* Stronger theme adaptation for the logo when realm changes */
+body.realm-piltover .tcp-logo-img {
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.55));
+}
+
+body.realm-zaun .tcp-logo-img {
+  filter: drop-shadow(0 0 10px rgba(0, 230, 138, 0.55));
 }
 
 .brand-hextech-badge {
@@ -160,13 +181,15 @@
   align-items: center;
   justify-content: center;
   gap: 0.7rem;
+  width: 100%;
   padding: 0.45rem 1rem;
   background: rgba(0, 0, 0, 0.35);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  border-bottom: 1px solid var(--active-border);
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.14em;
-  color: var(--piltover-gold-light);
+  color: var(--text-secondary);
+  text-align: center;
 }
 
 .header-sub-bar .pulse-dot {
